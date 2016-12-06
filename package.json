@@ -1,0 +1,23 @@
+{
+  "name": "payment-gateway-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TalZa90/PaymentGatewayTS.git"
+  },
+  "author": "Tal Zaidman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TalZa90/PaymentGatewayTS/issues"
+  },
+  "homepage": "https://github.com/TalZa90/PaymentGatewayTS#readme",
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  }
+}

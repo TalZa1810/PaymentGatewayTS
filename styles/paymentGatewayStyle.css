@@ -1,0 +1,26 @@
+  input{
+    border: 2px solid black;
+  }
+
+  .active{
+      display: block;
+  }
+
+  h2 {
+    color: black;
+    font-family: verdana;
+    font-size: 14px;
+  }
+
+  h3 {
+    color: black;
+    font-family: verdana;
+    font-size: 12px;
+  }
+
+
+  p {
+    color: black;
+    font-family: verdana;
+    font-size: 13px;
+  }
