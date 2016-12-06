@@ -12,6 +12,8 @@ function main() {
     buildForm(stepPointer);
 }
 
+
+
 function buildForm(stepNumber) {
 
     var htmlForm;
