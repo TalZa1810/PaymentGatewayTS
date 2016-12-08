@@ -1,10 +1,12 @@
-//LOCAL VAR. SHOULD BE TRANSFERRED TO A DIFFERENT JSON FILE
 var gFormsData = {
     "forms": [
-        {
-            "stepNumber": 0,
+        // ------------ 0 ----------------
+        {         
+            "stepNumber": "0",
             "stepTitle": "Please select the relevant payment gateway",
+            "formTitle": "Payment Gateway:",
             "buttonsTitle": "payment-gateway",
+            "isYesNo": "false",
             "buttonsArray": [
                 {
                     "buttonDescription": "PayPal",
@@ -23,11 +25,14 @@ var gFormsData = {
                     "stepNumber": "5"
                 }
             ]
-
-        }, {
-            "stepNumber": 1,
+        },
+        // ------------ 1 ----------------
+        {
+            "stepNumber": "1",
             "stepTitle": "Please select the relevant issue",
+            "formTitle": "PayPal Subject Issue:",
             "buttonsTitle": "paypal-subject-issues",
+            "isYesNo": "false",
             "buttonsArray": [
                 {
                     "buttonDescription": "Orders",
@@ -44,6 +49,91 @@ var gFormsData = {
                 }, {
                     "buttonDescription": "Error Message",
                     "stepNumber": "10"
+                }
+            ]
+        },
+        // ------------ 2 ----------------
+        {
+            "stepNumber": "2",
+            "stepTitle": " ",
+            "formTitle": " ",
+            "buttonsTitle": " ",
+            "isYesNo": "false",
+            "buttonsArray": [
+                {
+                    "buttonDescription": " ",
+                    "stepNumber": " "
+                }, {
+                    "buttonDescription": " ",
+                    "stepNumber": " "
+                }
+            ]
+        },
+        // ------------ 3 ----------------
+        {
+            "stepNumber": "3",
+            "stepTitle": " ",
+            "formTitle": " ",
+            "buttonsTitle": " ",
+            "isYesNo": "false",
+            "buttonsArray": [
+                {
+                    "buttonDescription": " ",
+                    "stepNumber": " "
+                }, {
+                    "buttonDescription": " ",
+                    "stepNumber": " "
+                }
+            ]
+        },
+        // ------------ 4 ----------------
+        {
+            "stepNumber": "4",
+            "stepTitle": " ",
+            "formTitle": " ",
+            "buttonsTitle": " ",
+            "isYesNo": "false",
+            "buttonsArray": [
+                {
+                    "buttonDescription": " ",
+                    "stepNumber": " "
+                }, {
+                    "buttonDescription": " ",
+                    "stepNumber": " "
+                }
+            ]
+        },
+        // ------------ 5 ----------------
+        {
+            "stepNumber": "5",
+            "stepTitle": " ",
+            "formTitle":" ",
+            "buttonsTitle": " ",
+            "isYesNo": "false",
+            "buttonsArray": [
+                {
+                    "buttonDescription": " ",
+                    "stepNumber": " "
+                }, {
+                    "buttonDescription": " ",
+                    "stepNumber": " "
+                }
+            ]
+        },
+        // ------------ 6 ----------------
+        {
+            "stepNumber": "6",
+            "stepTitle": "Do the orders appear in the store manager?",
+            "formTitle": "Do the orders appear in the store manager?:",
+            "buttonsTitle": "orders-appear-store-manager",
+            "isYesNo": "true",
+            "buttonsArray": [
+                {
+                    "buttonDescription": "Yes",
+                    "stepNumber": "7"
+                }, {
+                    "buttonDescription": "No",
+                    "stepNumber": "8"
                 }
             ]
         }

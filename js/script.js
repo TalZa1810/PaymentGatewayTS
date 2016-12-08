@@ -1,10 +1,7 @@
-
-
 //GLOBAL VAR
 var stepPointer = 0;
-
-//map: key - stepNumber and value - stepInfo 
-var userPath = Map(); 
+var yesIndex = 0;
+var noIndex = 1;
 
 
 function main() {
@@ -12,82 +9,56 @@ function main() {
     buildForm(stepPointer);
 }
 
-
-
 function buildForm(stepNumber) {
 
     var htmlForm;
 
     htmlForm = '<div stepNumber=' + stepNumber + "" + '>';
-    htmlForm += buildFormTitle (gFormsData.forms[stepNumber].stepTitle);
-    htmlForm += buildFormButtons (gFormsData.forms[stepNumber].buttonsArray, stepNumber);
+    htmlForm += buildFormTitle(gFormsData.forms[stepNumber].stepTitle);
+    htmlForm += buildFormButtons(gFormsData.forms[stepNumber]);
     htmlForm += '</div>';
 
     document.getElementById('content').innerHTML = htmlForm;
 }
 
-function buildFormTitle(stepTitle){
+function buildFormTitle(stepTitle) {
 
     var htmlStr = '<h2>' + stepTitle + '</h2>';
     return htmlStr;
 }
 
-function buildFormButtons(buttonsArray, stepNumber){      
+function buildFormButtons(step) {
 
-     var htmlStr = '<div class=stepButtons>';
+    var htmlStr = '<div class="' + step.buttonsTitle + '">';
 
-     buttonsArray.forEach(function (button){
-         htmlStr+= buildButton(button);
-     });
+    if (step.isYesNo == "false") {
+        step.buttonsArray.forEach(function (button) {
 
-     htmlStr += '</div';
+            htmlStr += buildButton(button, "regularBtn");
+        });
+    }
+    else {
+        htmlStr += buildButton(step.buttonsArray[yesIndex], "Yes");
+        htmlStr += buildButton(step.buttonsArray[noIndex], "No");
+    }
 
-     return htmlStr;
+    htmlStr += '</div';
+
+    return htmlStr;
 }
 
-function buildButton( button ){
+function buildButton(button, classOption) {
 
-    //userPath.set(button.stepNumber, new stepInfo(button.) )    
+    updateNextStep(button.stepNumber);
 
-    updateNextStep (button.stepNumber);
-
-    return'<button onclick=\" buildForm(' + stepPointer + ')\">' + button.buttonDescription + '</button></br>';
+    return '<button class="' + classOption + '" onclick=" buildForm(' + stepPointer + ')">' + button.buttonDescription + '</button></br>';
 }
+
 
 //TODO: create map of objects- key- stepNumber and value- stepInfo: stepInfo : buttonDescription
 
-function updateNextStep (currentStep){
+function updateNextStep(currentStep) {
     stepPointer = currentStep;
 }
 
-function updateUserChoice(){
-    userPath
-}
 
-function setNewStep(){
-
-}
-
-function stepInfo(buttonsTitle, chosenButtonDescription) {
-    this.issueTitle = buttonsTitle;
-    this.userChoice= chosenButtonDescription;
-}
-
-/*sayings.set("dog", "woof");
-sayings.set("cat", "meow");
-sayings.set("elephant", "toot");
-sayings.size; // 3
-sayings.get("fox"); // undefined
-sayings.has("bird"); // false
-sayings.delete("dog");
-sayings.has("dog"); // false
-
-for (var [key, value] of sayings) {
-  console.log(key + " goes " + value);
-}
-// "cat goes meow"
-// "elephant goes toot"
-
-sayings.clear();
-sayings.size; // 0
- */
