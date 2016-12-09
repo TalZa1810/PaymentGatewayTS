@@ -29,20 +29,28 @@ function buildFormTitle(stepTitle) {
 
 function buildFormButtons(step) {
 
-    var htmlStr = '<div class="' + step.buttonsTitle + '">';
+    var htmlStr;
 
     if (step.isYesNo == "false") {
+        //block elements
+        htmlStr = '<div class="' + step.buttonsTitle + '">';
+
         step.buttonsArray.forEach(function (button) {
 
             htmlStr += buildButton(button, "regularBtn");
         });
+
+        htmlStr += '</div';
     }
     else {
-        htmlStr += buildButton(step.buttonsArray[yesIndex], "Yes");
-        htmlStr += buildButton(step.buttonsArray[noIndex], "No");
+        //inline elements
+        htmlStr = '<span class="' + step.buttonsTitle + '">';
+        htmlStr += buildButton(step.buttonsArray[yesIndex], "yesBtn");
+        htmlStr += buildButton(step.buttonsArray[noIndex], "noBtn");
+        htmlStr += '</span';
     }
 
-    htmlStr += '</div';
+    
 
     return htmlStr;
 }
@@ -51,7 +59,17 @@ function buildButton(button, classOption) {
 
     updateNextStep(button.stepNumber);
 
-    return '<button class="' + classOption + '" onclick=" buildForm(' + stepPointer + ')">' + button.buttonDescription + '</button></br>';
+    var htmlStr = '<button class="' + classOption + '" onclick=" buildForm(' + stepPointer + ')">' + button.buttonDescription + '</button>';
+
+    if (classOption == "regularBtn"){
+        htmlStr+= '</br>';
+    }
+
+    return htmlStr;
+
+
+
+    //return '<button class="' + classOption + '" onclick=" buildForm(' + stepPointer + ')">' + button.buttonDescription + '</button></br>';
 }
 
 
