@@ -87,8 +87,6 @@ function handleClick(buttonClicked) {
 function storeUserSelection(userChoice, originFormTitle) {
 
     var choiceSelected = new infoUserPath(userChoice, originFormTitle);
-
-    debugger;
     userPath.push(choiceSelected);
 }
 
