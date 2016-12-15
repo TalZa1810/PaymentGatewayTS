@@ -41,7 +41,9 @@ function buildForm(stepNumber, title, userChoice) {
     htmlForm += '</div>';
 
     document.getElementById('content').innerHTML = htmlForm;
-    $('#content .regularBtn,.yesBtn,.noBtn').on("click", handleClick);
+    //$('#content .regularBtn,.yesBtn,.noBtn').on("click", handleClick);
+    $('#content .btn-lg,.btn-success,.btn-danger').on("click", handleClick);
+
 }
 
 function redirectToFAQURL(){
@@ -71,7 +73,7 @@ function displayUserChoice(infoUserPath){
 
 function buildFormTitle(stepTitle) {
 
-    var htmlStr = '<h2>' + stepTitle + '</h2>';
+    var htmlStr = '<h4>' + stepTitle + '</h4>';
     return htmlStr;
 }
 
@@ -81,11 +83,14 @@ function buildFormButtons(step) {
 
     if (step.isYesNo == "false") {
         //block elements
-        htmlStr = '<div class="' + step.buttonsTitle + '">';
+       
+        //htmlStr = '<div class="' + step.buttonsTitle + '">';
+        htmlStr = '<div>';
 
         step.buttonsArray.forEach(function (button) {
 
-            htmlStr += buildButton(button, "regularBtn");
+           //htmlStr += buildButton(button, "regularBtn");
+          htmlStr += buildButton(button, "btn btn-default btn-lg");
         });
 
         htmlStr += '</div';
@@ -93,8 +98,11 @@ function buildFormButtons(step) {
     else {
         //inline elements
         htmlStr = '<span class="' + step.buttonsTitle + '">';
-        htmlStr += buildButton(step.buttonsArray[yesIndex], "yesBtn");
-        htmlStr += buildButton(step.buttonsArray[noIndex], "noBtn");
+        //htmlStr += buildButton(step.buttonsArray[yesIndex], "yesBtn");
+        htmlStr += buildButton(step.buttonsArray[yesIndex], "btn btn-success");
+        
+        //htmlStr += buildButton(step.buttonsArray[noIndex], "noBtn");
+        htmlStr += buildButton(step.buttonsArray[noIndex], "btn btn-danger");
         htmlStr += '</span';
     }
 
@@ -103,9 +111,11 @@ function buildFormButtons(step) {
 
 function buildButton(button, classOption) {
 
-    var htmlStr = '<button class="' + classOption+'" id='+button.stepNumber+'>'+ button.buttonDescription +'</button>';
+    //var htmlStr = '<button class="' + classOption+'" id='+button.stepNumber+'>'+ button.buttonDescription +'</button>';
 
-    if (classOption == "regularBtn") {
+    var htmlStr = '<button  type="button" class="btn btn-default btn-lg" id='+button.stepNumber+'>'+ button.buttonDescription +'</button>';
+
+     if (classOption == "btn btn-default btn-lg") {
         htmlStr += '</br>';
     }
 
@@ -151,4 +161,10 @@ function infoUserPath(userChoice, originFormTitle) {
     };
 
     return true;
+}
+
+
+function buildBackButton(){
+    //building back button
+    //deleting from userPath array previous 
 }
