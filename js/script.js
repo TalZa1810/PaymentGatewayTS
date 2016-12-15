@@ -3,22 +3,51 @@ var stepPointer = 0;
 var yesIndex = 0;
 var noIndex = 1;
 
+var userPath = [];
 
 function main() {
     // var formsData = JSON.parse(forms); //TODO: from server
-    buildForm(stepPointer);
+    buildForm(stepPointer/*, "null", "null"*/);
 }
 
-function buildForm(stepNumber) {
+
+
+/*
+
+ctor
+function userStepInfo(formNum, title, userChoice) {
+    this.stepNum = formNum;
+    this.formTitle = title;
+    this.Choise = userChoice;
+
+}
+
+function updateChosenPath() {
+
+    //updating user's choise path
+    if (stepNum != 0) {//or different than last form step number
+        formInfo = new userStepInfo(stepNum, title, userChoice);
+        userPath.push(formInfo);
+    }
+} */
+
+
+
+function buildForm(stepNumber, title, userChoice) {
+
+    //debugger;
 
     var htmlForm;
 
-    htmlForm = '<div stepNumber=' + stepNumber + "" + '>';
+    //adding class to the first line
+
+    htmlForm = '<div class=form stepNumber=' + stepNumber + "" + '>';    
     htmlForm += buildFormTitle(gFormsData.forms[stepNumber].stepTitle);
     htmlForm += buildFormButtons(gFormsData.forms[stepNumber]);
     htmlForm += '</div>';
 
     document.getElementById('content').innerHTML = htmlForm;
+    $('#content .regularBtn').on("click", handleClick);
 }
 
 function buildFormTitle(stepTitle) {
@@ -50,33 +79,67 @@ function buildFormButtons(step) {
         htmlStr += '</span';
     }
 
-    
-
     return htmlStr;
 }
 
 function buildButton(button, classOption) {
 
-    updateNextStep(button.stepNumber);
+    //updateNextStep(button.stepNumber);
 
-    var htmlStr = '<button class="' + classOption + '" onclick=" buildForm(' + stepPointer + ')">' + button.buttonDescription + '</button>';
+    //var htmlStr = '<button class="' + classOption + '" onclick=" buildForm(' + stepPointer + ')">' + button.buttonDescription + '</button>';
 
-    if (classOption == "regularBtn"){
-        htmlStr+= '</br>';
+    //var htmlStr = '<button class="' + classOption + '" onclick=" handleClick(' + stepPointer + ')">' + button.buttonDescription + '</button>';
+
+    var htmlStr = '<button class="' + classOption+'" id='+button.stepNumber+'>'+ button.buttonDescription +'</button>';
+
+    if (classOption == "regularBtn") {
+        htmlStr += '</br>';
     }
 
     return htmlStr;
-
-
-
-    //return '<button class="' + classOption + '" onclick=" buildForm(' + stepPointer + ')">' + button.buttonDescription + '</button></br>';
 }
-
-
-//TODO: create map of objects- key- stepNumber and value- stepInfo: stepInfo : buttonDescription
 
 function updateNextStep(currentStep) {
     stepPointer = currentStep;
+}
+
+function handleClick(buttonClicked) {
+
+    var originFormNumber = $( ".form" ).attr("stepNumber");
+    
+    var originFormTitle = gFormsData.forms[originFormNumber].formTitle;
+
+    updateNextStep(event.target.id);
+
+    //var userChoice = gFormsData.forms[originFormNumber].buttonsArray[stepPointer].buttonDescription;
+
+    var buttonClickedDescription = event.target.innerHTML;
+
+    storeUserSelection(buttonClickedDescription, originFormTitle);
+    buildForm(stepPointer);
+}
+
+
+function storeUserSelection(userChoice, originFormTitle) {
+
+    var choiceSelected = new infoUserPath(userChoice, originFormTitle);
+    userPath.push(choiceSelected);
+}
+
+function infoUserPath(userChoice, originFormTitle) {
+
+    this.formTitle = originFormTitle;
+    this.userChoice = userChoice;
+
+    this.getFormTitle = function () {
+        return this.formTitle;
+    };
+
+    this.getUserChoice = function () {
+        return this.userChoice;
+    };
+
+    return true;
 }
 
 
