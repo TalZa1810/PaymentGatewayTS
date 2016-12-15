@@ -136,6 +136,28 @@ var gFormsData = {
                     "stepNumber": "8"
                 }
             ]
+        } ,     
+        // ------------ 7 ----------------
+        {
+            "stepNumber": "7",
+            "stepTitle": "Submit a ticket with the following information:",
+            "formTitle": "Submit ticket",
+            "buttonsTitle": "",
+            "isYesNo": "false",
+            "ticketOrFAQ": "ticket",
+            "buttonsArray": [ ]
+        },
+         // ------------ 8 ----------------
+        {
+            "stepNumber": "8",
+            "stepTitle": "FAQ title",
+            "formTitle": "FAQ title",
+            "buttonsTitle": "",
+            "isYesNo": "false",
+            "ticketOrFAQ": "FAQ",
+            "faqURL": "https://www.wix.com/support/html5/article/requiring-a-customer-phone-number-when-checking-out-with-paypal",
+            "faqTitle": "Requiring a Customer Phone Number when Checking Out with Paypal",
+            "buttonsArray": [ ]
         }
     ]
 }

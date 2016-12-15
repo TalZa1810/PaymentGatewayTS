@@ -15,11 +15,58 @@ function buildForm(stepNumber, title, userChoice) {
 
     htmlForm = '<div class=form stepNumber=' + stepNumber + "" + '>';    
     htmlForm += buildFormTitle(gFormsData.forms[stepNumber].stepTitle);
-    htmlForm += buildFormButtons(gFormsData.forms[stepNumber]);
+
+    if (gFormsData.forms[stepNumber].buttonsArray.length != 0)
+    {
+            htmlForm += buildFormButtons(gFormsData.forms[stepNumber]);
+    }
+    else{
+
+        /*
+           if (gFormsData.forms[stepNumber].formTitle == "Submit ticket"){
+
+            htmlForm += displayUserPath();
+        }     
+        */
+
+        if (gFormsData.forms[stepNumber].ticketOrFAQ === "ticket"){
+            htmlForm += displayUserPath();
+        }
+        else if (gFormsData.forms[stepNumber].ticketOrFAQ === "FAQ"){
+   
+            htmlForm += redirectToFAQURL();
+        }    
+    }
+
     htmlForm += '</div>';
 
     document.getElementById('content').innerHTML = htmlForm;
-    $('#content .regularBtn').on("click", handleClick);
+    $('#content .regularBtn,.yesBtn,.noBtn').on("click", handleClick);
+}
+
+function redirectToFAQURL(){
+
+    var faqTitle = gFormsData.forms[event.target.id].faqTitle;
+    var faqURL= gFormsData.forms[event.target.id].faqURL;
+
+    return '<p>Click <a href="'+ faqURL +'"><b>here</b></a> to learn more about  <b>'+ faqTitle + '</b>.</p>';
+}
+
+function displayUserPath(){
+
+    var htmlStr ='';
+
+      userPath.forEach(function (infoUserPath) {
+
+            htmlStr += displayUserChoice(infoUserPath);
+        });
+
+      return htmlStr;  
+}
+
+function displayUserChoice(infoUserPath){
+
+    return '<p>' + infoUserPath.formTitle +'  '+ infoUserPath.userChoice + '</p><br>';
 }
 
 function buildFormTitle(stepTitle) {
