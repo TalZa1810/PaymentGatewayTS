@@ -7,6 +7,7 @@ var userPath = [];
 
 function main() {
 
+    addParentFormAttribute(stepPointer, null);
     buildForm(stepPointer);
 }
 
@@ -101,10 +102,10 @@ function buildFormButtons(step) {
         //inline elements
         htmlStr = '<span class="' + step.buttonsTitle + '">';
         //htmlStr += buildButton(step.buttonsArray[yesIndex], "yesBtn");
-        htmlStr += buildButton(step.buttonsArray[yesIndex], "btn btn-success");
+        htmlStr += buildButton(step.buttonsArray[yesIndex], "btn btn-lg btn-success");
         
         //htmlStr += buildButton(step.buttonsArray[noIndex], "noBtn");
-        htmlStr += buildButton(step.buttonsArray[noIndex], "btn btn-danger");
+        htmlStr += buildButton(step.buttonsArray[noIndex], "btn btn-lg btn-danger");
         htmlStr += '</span';
     }
 
@@ -168,15 +169,15 @@ function buildBackButton(){
 }
 
 
-function addParentFormAttribute(childNumber , parentNumber){
-
+function addParentFormAttribute(childNumber , parentNumber){ 
     //stopping condition
     if (childNumber != undefined){
 
-    }
-    else{
-        //adding attribute
-        addParentFormAttribute( );
-    }
+        gFormsData.forms[childNumber]["parent"] = parentNumber;
 
+        gFormsData.forms[childNumber].buttonsArray.forEach(function (childNumber , parentNumber) {
+
+          addParentFormAttribute(childNumber.stepNumber , parentNumber);
+        });        
+    }
 }
