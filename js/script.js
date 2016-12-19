@@ -6,6 +6,7 @@ var noIndex = 1;
 var userPath = [];
 
 function main() {
+
     buildForm(stepPointer);
 }
 
@@ -35,7 +36,7 @@ function buildForm(stepNumber, title, userChoice) {
         else if (gFormsData.forms[stepNumber].ticketOrFAQ === "FAQ"){
    
             htmlForm += redirectToFAQURL();
-        }    
+        }  
     }
 
     htmlForm += '</div>';
@@ -45,6 +46,7 @@ function buildForm(stepNumber, title, userChoice) {
     $('#content .btn-lg,.btn-success,.btn-danger').on("click", handleClick);
 
 }
+
 
 function redirectToFAQURL(){
 
@@ -89,7 +91,7 @@ function buildFormButtons(step) {
 
         step.buttonsArray.forEach(function (button) {
 
-           //htmlStr += buildButton(button, "regularBtn");
+          //htmlStr += buildButton(button, "regularBtn");
           htmlStr += buildButton(button, "btn btn-default btn-lg");
         });
 
@@ -111,11 +113,9 @@ function buildFormButtons(step) {
 
 function buildButton(button, classOption) {
 
-    //var htmlStr = '<button class="' + classOption+'" id='+button.stepNumber+'>'+ button.buttonDescription +'</button>';
+    var htmlStr = '<button  type="button" class="'+classOption +'" id='+button.stepNumber+'>'+ button.buttonDescription +'</button>';
 
-    var htmlStr = '<button  type="button" class="btn btn-default btn-lg" id='+button.stepNumber+'>'+ button.buttonDescription +'</button>';
-
-     if (classOption == "btn btn-default btn-lg") {
+     if (classOption === "btn btn-default btn-lg") {
         htmlStr += '</br>';
     }
 
@@ -140,7 +140,6 @@ function handleClick(buttonClicked) {
     buildForm(stepPointer);
 }
 
-
 function storeUserSelection(userChoice, originFormTitle) {
 
     var choiceSelected = new infoUserPath(userChoice, originFormTitle);
@@ -163,8 +162,21 @@ function infoUserPath(userChoice, originFormTitle) {
     return true;
 }
 
-
 function buildBackButton(){
     //building back button
     //deleting from userPath array previous 
+}
+
+
+function addParentFormAttribute(childNumber , parentNumber){
+
+    //stopping condition
+    if (childNumber != undefined){
+
+    }
+    else{
+        //adding attribute
+        addParentFormAttribute( );
+    }
+
 }
