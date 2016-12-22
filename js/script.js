@@ -7,7 +7,7 @@ var userPath = [];
 
 function main() {
 
-    addParentFormAttribute(stepPointer, null);
+    //addParentFormAttribute(stepPointer, null);
     buildForm(stepPointer);
 }
 
@@ -18,8 +18,7 @@ function buildForm(stepNumber, title, userChoice) {
     htmlForm = '<div class=form stepNumber=' + stepNumber + "" + '>';    
     htmlForm += buildFormTitle(gFormsData.forms[stepNumber].stepTitle);
 
-    if (gFormsData.forms[stepNumber].buttonsArray.length != 0)
-    {
+    if (gFormsData.forms[stepNumber].buttonsArray.length != 0)  {
             htmlForm += buildFormButtons(gFormsData.forms[stepNumber]);
     }
     else{

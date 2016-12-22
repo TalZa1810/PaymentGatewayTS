@@ -3,15 +3,15 @@ var gFormsData = {
         // ------------ 0 ----------------
         {         
             "stepNumber": "0",
-            "stepTitle": "Please select the relevant payment gateway",
             "formTitle": "Payment Gateway:",
+            "stepTitle": "Please select the relevant payment gateway",            
             "buttonsTitle": "payment-gateway",
             "isYesNo": "false",
             "buttonsArray": [
                 {
                     "buttonDescription": "PayPal",
                     "stepNumber": "1"
-                }, {
+                }/*/, {
                     "buttonDescription": "Stripe",
                     "stepNumber": "2"
                 }, {
@@ -23,133 +23,163 @@ var gFormsData = {
                 }, {
                     "buttonDescription": "Offline Payments",
                     "stepNumber": "5"
-                }
+                }*/
             ]
         },
         // ------------ 1 ----------------
         {
             "stepNumber": "1",
-            "stepTitle": "Please select the relevant issue",
             "formTitle": "PayPal Subject Issue:",
+            "stepTitle": "To which subject the issue is related?",            
             "buttonsTitle": "paypal-subject-issues",
             "isYesNo": "false",
             "buttonsArray": [
                 {
-                    "buttonDescription": "Orders",
-                    "stepNumber": "6"
-                }, {
                     "buttonDescription": "Checkout",
-                    "stepNumber": "7"
+                    "stepNumber": "2"
                 }, {
-                    "buttonDescription": "Discount",
-                    "stepNumber": "8"
-                }, {
-                    "buttonDescription": "Paypal Instant Payment Notification Message",
-                    "stepNumber": "9"
-                }, {
-                    "buttonDescription": "Error Message",
-                    "stepNumber": "10"
+                    "buttonDescription": "Orders",
+                    "stepNumber": "3"
                 }
             ]
         },
         // ------------ 2 ----------------
         {
             "stepNumber": "2",
-            "stepTitle": " ",
-            "formTitle": " ",
-            "buttonsTitle": " ",
+            "formTitle": "Checkout Issue:",
+            "stepTitle": "Please choose the relevant issue:",            
+            "buttonsTitle": "paypal-checkout-issues",
             "isYesNo": "false",
             "buttonsArray": [
                 {
-                    "buttonDescription": " ",
-                    "stepNumber": " "
+                    "buttonDescription": "Enabling Guest Checkout for PayPal in Your Store",
+                    "stepNumber": "4"
                 }, {
-                    "buttonDescription": " ",
-                    "stepNumber": " "
+                    "buttonDescription": "Additional shipping/tax fees appear when proceeding to the checkout page",
+                    "stepNumber": "5"
+                }, {
+                    "buttonDescription": "Unable to apply a 100% discount",
+                    "stepNumber": "6"
+                }, {
+                    "buttonDescription": "Unable to set the language of the checkout page",
+                    "stepNumber": "7"
+                }, {
+                    "buttonDescription": "Unable to checkout due to Encrypted Payments",
+                    "stepNumber": "8"
+                }, {
+                    "buttonDescription": "Instant Payment Notification (IPN) Message",
+                    "stepNumber": "9"
+                }, {
+                    "buttonDescription": "Other",
+                    "stepNumber": "10"
                 }
             ]
         },
         // ------------ 3 ----------------
         {
-            "stepNumber": "3",
-            "stepTitle": " ",
-            "formTitle": " ",
-            "buttonsTitle": " ",
+            "stepNumber": "3",            
+            "formTitle": "Orders Issue:",
+            "stepTitle": "Please choose the relevant issue:",
+            "buttonsTitle": "paypal-orders-issues",
             "isYesNo": "false",
             "buttonsArray": [
                 {
-                    "buttonDescription": " ",
-                    "stepNumber": " "
+                    "buttonDescription": "Orders are not appearing in the store manager",
+                    "stepNumber": "11"
+                },
+                {
+                    "buttonDescription": "Phone number missing in the Orders tab",
+                    "stepNumber": "12"
                 }, {
-                    "buttonDescription": " ",
-                    "stepNumber": " "
+                    "buttonDescription": "Buyers are not redirected to the Thank You page",
+                    "stepNumber": "13"
+                }, {
+                    "buttonDescription": "Orders are not appearing in the store manager",
+                    "stepNumber": "14"
+                }, {
+                    "buttonDescription": "Other",
+                    "stepNumber": "15"
                 }
             ]
         },
         // ------------ 4 ----------------
         {
             "stepNumber": "4",
-            "stepTitle": " ",
-            "formTitle": " ",
+            "formTitle": "Guest Checkout",
+            "stepTitle": "Enabling Guest Checkout for PayPal in Your Store",
+            "faqTitle": "Enabling Guest Checkout for PayPal in Your Store",
             "buttonsTitle": " ",
             "isYesNo": "false",
-            "buttonsArray": [
-                {
-                    "buttonDescription": " ",
-                    "stepNumber": " "
-                }, {
-                    "buttonDescription": " ",
-                    "stepNumber": " "
-                }
-            ]
+            "ticketOrFAQ": "FAQ",       
+            "faqURL": "https://www.wix.com/support/html5/article/enabling-guest-checkout-for-paypal-in-your-store", 
+            "buttonsArray": [ ]   
         },
         // ------------ 5 ----------------
         {
             "stepNumber": "5",
-            "stepTitle": " ",
-            "formTitle":" ",
+            "formTitle":"Submit a ticket",
+            "stepTitle": "Submit a ticket with the following information:",            
             "buttonsTitle": " ",
             "isYesNo": "false",
-            "buttonsArray": [
-                {
-                    "buttonDescription": " ",
-                    "stepNumber": " "
-                }, {
-                    "buttonDescription": " ",
-                    "stepNumber": " "
-                }
-            ]
+            "buttonsArray": [  ]
         },
         // ------------ 6 ----------------
         {
             "stepNumber": "6",
-            "stepTitle": "Do the orders appear in the store manager?",
-            "formTitle": "Do the orders appear in the store manager?:",
-            "buttonsTitle": "orders-appear-store-manager",
-            "isYesNo": "true",
-            "buttonsArray": [
-                {
-                    "buttonDescription": "Yes",
-                    "stepNumber": "7"
-                }, {
-                    "buttonDescription": "No",
-                    "stepNumber": "8"
-                }
-            ]
+            "formTitle": "PayPal Discount",
+            "stepTitle": "Unable to apply a 100% discount",
+            "faqTitle": "Unable to apply a 100% discount",
+            "buttonsTitle": " ",
+            "isYesNo": "false",
+            "ticketOrFAQ": "FAQ",       
+            "faqURL": "https://www.wix.com/support/html5/article/using-wix-stores-coupons-with-paypal", 
+            "buttonsArray": [ ]   
         } ,     
         // ------------ 7 ----------------
         {
             "stepNumber": "7",
-            "stepTitle": "Submit a ticket with the following information:",
-            "formTitle": "Submit ticket",
-            "buttonsTitle": "",
+            "formTitle": "PayPal Checkout Language",
+            "stepTitle": "Setting the Language of the Wix Stores PayPal Checkout Page",
+            "faqTitle": "Setting the Language of the Wix Stores PayPal Checkout Page",
+            "buttonsTitle": " ",
             "isYesNo": "false",
-            "ticketOrFAQ": "ticket",
-            "buttonsArray": [ ]
-        },
+            "ticketOrFAQ": "FAQ",       
+            "faqURL": "https://www.wix.com/support/html5/article/request-setting-the-language-of-the-wixstores-paypal-checkout-page", 
+            "buttonsArray": [ ]   
+        } , 
          // ------------ 8 ----------------
-        {
+         {
             "stepNumber": "8",
+            "formTitle": "PayPal Encrypted Payments",
+            "stepTitle": "Disabling PayPal Encryption Messages",
+            "faqTitle": "Disabling PayPal Encryption Messages",
+            "buttonsTitle": " ",
+            "isYesNo": "false",
+            "ticketOrFAQ": "FAQ",       
+            "faqURL": "https://www.wix.com/support/html5/article/disabling-paypal-encryption-messages", 
+            "buttonsArray": [ ]   
+        } , 
+        // ------------ 9 ----------------
+         {
+            "stepNumber": "9",
+            "formTitle": "PayPal Encrypted Payments",
+            "stepTitle": "Disabling PayPal Encryption Messages",
+            "faqTitle": "Disabling PayPal Encryption Messages",
+            "buttonsTitle": " ",
+            "isYesNo": "false",
+            "ticketOrFAQ": "FAQ",       
+            "faqURL": "https://www.wix.com/support/html5/article/disabling-paypal-encryption-messages", 
+            "buttonsArray": [ ]   
+        } 
+    ]
+
+}
+
+
+/*
+         // ------------ 20----------------
+        {
+            "stepNumber": "20",
             "stepTitle": "FAQ title",
             "formTitle": "FAQ title",
             "buttonsTitle": "",
@@ -158,6 +188,18 @@ var gFormsData = {
             "faqURL": "https://www.wix.com/support/html5/article/requiring-a-customer-phone-number-when-checking-out-with-paypal",
             "faqTitle": "Requiring a Customer Phone Number when Checking Out with Paypal",
             "buttonsArray": [ ]
-        }
-    ]
-}
+        },
+
+        {
+            "stepNumber": "15",
+            "stepTitle": "Submit a ticket with the following information:",
+            "formTitle": "Submit ticket",
+            "buttonsTitle": "",
+            "isYesNo": "false",
+            "ticketOrFAQ": "ticket",
+            "buttonsArray": [ ]
+        },
+
+
+
+ */
