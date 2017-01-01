@@ -7,7 +7,7 @@ var userPath = [];
 
 function main() {
 
-    //addParentFormAttribute(stepPointer, null);
+    addParentFormAttribute(stepPointer.toString() , "null");
     buildForm(stepPointer);
 }
 
@@ -168,15 +168,14 @@ function buildBackButton(){
 }
 
 
-function addParentFormAttribute(childNumber , parentNumber){ 
-    //stopping condition
-    if (childNumber != undefined){
+function addParentFormAttribute( cuurentNode ,parentNumber){ 
+    
+   gFormsData.forms[cuurentNode]["parent"] = parentNumber;
 
-        gFormsData.forms[childNumber]["parent"] = parentNumber;
-
-        gFormsData.forms[childNumber].buttonsArray.forEach(function (childNumber , parentNumber) {
-
-          addParentFormAttribute(childNumber.stepNumber , parentNumber);
-        });        
-    }
+  if (gFormsData.forms[cuurentNode].buttonsArray.length  !=  0){
+    gFormsData.forms[cuurentNode].buttonsArray.forEach(function (cuurentNode , parentNumber) {
+         addParentFormAttribute( cuurentNode.stepNumber  , parentNumber.toString());
+       });  
+    }      
 }
+

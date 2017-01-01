@@ -11,7 +11,7 @@ var gFormsData = {
                 {
                     "buttonDescription": "PayPal",
                     "stepNumber": "1"
-                }/*/, {
+                }, {
                     "buttonDescription": "Stripe",
                     "stepNumber": "2"
                 }, {
@@ -23,7 +23,7 @@ var gFormsData = {
                 }, {
                     "buttonDescription": "Offline Payments",
                     "stepNumber": "5"
-                }*/
+                }
             ]
         },
         // ------------ 1 ----------------
@@ -37,7 +37,7 @@ var gFormsData = {
                 {
                     "buttonDescription": "Checkout",
                     "stepNumber": "2"
-                }, {
+                 } , {
                     "buttonDescription": "Orders",
                     "stepNumber": "3"
                 }
@@ -74,7 +74,7 @@ var gFormsData = {
                     "stepNumber": "10"
                 }
             ]
-        },
+        } , 
         // ------------ 3 ----------------
         {
             "stepNumber": "3",            
@@ -170,36 +170,39 @@ var gFormsData = {
             "ticketOrFAQ": "FAQ",       
             "faqURL": "https://www.wix.com/support/html5/article/disabling-paypal-encryption-messages", 
             "buttonsArray": [ ]   
+        } , 
+        // ------------ 10 ----------------
+         {
+            "stepNumber": "10",
+            "formTitle": "Checkout Other",
+            "stepTitle": "Submit a ticket with the following information:",
+            "buttonsTitle": " ",
+            "isYesNo": "false",
+            "ticketOrFAQ": "ticket",          
+            "buttonsArray": [ ]   
+        } , 
+        // ------------ 11 ----------------
+         {
+            "stepNumber": "11",
+            "formTitle": "Checkout Other",
+            "stepTitle": "Submit a ticket with the following information:",
+            "buttonsTitle": " ",
+            "isYesNo": "false",
+            "ticketOrFAQ": "ticket",          
+            "buttonsArray": [ ]   
+ 
+        } , 
+        // ------------ 12 ----------------
+         {
+            "stepNumber": "12",
+            "formTitle": "Missing Phone Number",
+            "stepTitle": "Requiring a Customer Phone Number when Checking Out with Paypal",
+            "faqTitle": "Requiring a Customer Phone Number when Checking Out with Paypal",
+            "buttonsTitle": " ",
+            "isYesNo": "false",
+            "ticketOrFAQ": "FAQ",       
+            "faqURL": " https://www.wix.com/support/html5/article/requiring-a-customer-phone-number-when-checking-out-with-paypal", 
+            "buttonsArray": [ ]   
         } 
     ]
-
 }
-
-
-/*
-         // ------------ 20----------------
-        {
-            "stepNumber": "20",
-            "stepTitle": "FAQ title",
-            "formTitle": "FAQ title",
-            "buttonsTitle": "",
-            "isYesNo": "false",
-            "ticketOrFAQ": "FAQ",
-            "faqURL": "https://www.wix.com/support/html5/article/requiring-a-customer-phone-number-when-checking-out-with-paypal",
-            "faqTitle": "Requiring a Customer Phone Number when Checking Out with Paypal",
-            "buttonsArray": [ ]
-        },
-
-        {
-            "stepNumber": "15",
-            "stepTitle": "Submit a ticket with the following information:",
-            "formTitle": "Submit ticket",
-            "buttonsTitle": "",
-            "isYesNo": "false",
-            "ticketOrFAQ": "ticket",
-            "buttonsArray": [ ]
-        },
-
-
-
- */
