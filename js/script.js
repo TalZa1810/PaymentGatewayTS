@@ -7,7 +7,7 @@ var userPath = [];
 
 function main() {
 
-    addParentFormAttribute(stepPointer , "null");
+    //addParentFormAttribute(stepPointer , "null");
     buildForm(stepPointer);
 }
 
@@ -175,7 +175,7 @@ function addParentFormAttribute( cuurentNode ,parentNumber){
 
   if (gFormsData.forms[cuurentNode].buttonsArray.length  !=  0){
     gFormsData.forms[cuurentNode].buttonsArray.forEach(function (singleBtn) {        
-         addParentFormAttribute( singleBtn.stepNumber  , cuurentNode);
+         addParentFormAttribute( singleBtn.stepNumber  , cuurentNode); //passing parentID and not currentNoda
        });  
     }      
 }
