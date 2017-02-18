@@ -1,159 +1,222 @@
 var data = {
-    "paymentGateway" :  {         
-            "stepId": " paymentGateway",
-            "formTitle": "Payment Gateway:",
-            "stepTitle": "Please select the relevant payment gateway",            
-            "buttonsArray": [
-                {
-                    "buttonDescription": "PayPal",
-                    "stepId": "paypalSubjectIssues"
-                }
-            ]
-      },
+    "paymentGateway": {
+        "stepId": "paymentGateway",
+        "formTitle": "Payment Gateway:",
+        "stepTitle": "Please select the relevant payment gateway",
+        "buttonsArray": [
+            {
+                "buttonDescription": "PayPal",
+                "stepId": "paypalSubjectIssues"
+            }
+        ]
+    },
 
-     "paypalSubjectIssues": {
-            "stepId": "paypalSubjectIssues", 
-            "formTitle": "PayPal Subject Issue:",
-            "stepTitle": "To which subject the issue is related?",            
-            "buttonsArray": [
-                {
-                    "buttonDescription": "Checkout",
-                    "stepId": "paypalCheckout"
-                 } , {
-                    "buttonDescription": "Orders",
-                    "stepId": "paypalOrders"
-                }
-            ]
-        },
+    "paypalSubjectIssues": {
+        "stepId": "paypalSubjectIssues",
+        "formTitle": "PayPal Subject Issue:",
+        "stepTitle": "To which subject the issue is related?",
+        "buttonsArray": [
+            {
+                "buttonDescription": "Checkout",
+                "stepId": "paypalCheckout"
+            }, {
+                "buttonDescription": "Orders",
+                "stepId": "paypalOrders"
+            }
+        ]
+    },
 
-       "paypalCheckout": {
-            "stepId": "paypalCheckout",
-            "formTitle": "Checkout Issue:",
-            "stepTitle": "Please choose the relevant issue:",            
-            "buttonsArray": [
-                {
-                    "buttonDescription": "Enabling Guest Checkout for PayPal in Your Store",
-                    "stepId": "guestCheckOut"
-                }, {
-                    "buttonDescription": "Additional shipping/tax fees appear when proceeding to the checkout page",
-                    "stepId": "additionalShippingOrTax"
-                }, {
-                    "buttonDescription": "Unable to apply a 100% discount",
-                    "stepId": "applyingDiscount"
-                }, {
-                    "buttonDescription": "Unable to set the language of the checkout page",
-                    "stepId": "settingCheckoutLanguage"
-                }, {
-                    "buttonDescription": "Unable to checkout due to Encrypted Payments",
-                    "stepId": "encryptedPayments"
-                }, {
-                    "buttonDescription": "Instant Payment Notification (IPN) Message",
-                    "stepId": "IPNMessage"
-                }, {
-                    "buttonDescription": "Other",
-                    "stepId": "paypalCheckoutOther"
-                }
-            ]
-        },
+    "paypalCheckout": {
+        "stepId": "paypalCheckout",
+        "formTitle": "Checkout Issue:",
+        "stepTitle": "Please choose the relevant issue:",
+        "buttonsArray": []
+    },
 
-        "guestCheckOut": {
-            "stepId": "guestCheckOut",
-            "formTitle": "Guest Checkout",
-            "stepTitle": "Enabling Guest Checkout for PayPal in Your Store",
-            "faqTitle": "Enabling Guest Checkout for PayPal in Your Store",    
-            "faqURL": "https://www.wix.com/support/html5/article/enabling-guest-checkout-for-paypal-in-your-store", 
-            "buttonsArray": [ ]   
-        },
-
-        //SHOULD ADD INFO
-        "additionalShippingOrTax": {
-           "stepId": "additionalShippingOrTax",
-
-        }, 
-
-        "applyingDiscount": {
-            "stepId": "applyingDiscount",
-            "formTitle": "PayPal Discount",
-            "stepTitle": "Unable to apply a 100% discount",
-            "faqTitle": "Unable to apply a 100% discount",   
-            "faqURL": "https://www.wix.com/support/html5/article/using-wix-stores-coupons-with-paypal", 
-            "buttonsArray": [ ]   
-        },
-
-        "settingCheckoutLanguage":{
-            "stepId": "settingCheckoutLanguage",
-            "formTitle": "PayPal Checkout Language",
-            "stepTitle": "Setting the Language of the Wix Stores PayPal Checkout Page",
-            "faqTitle": "Setting the Language of the Wix Stores PayPal Checkout Page",     
-            "faqURL": "https://www.wix.com/support/html5/article/request-setting-the-language-of-the-wixstores-paypal-checkout-page", 
-            "buttonsArray": [ ]  
-        },
-
-        "encryptedPayments":{
-            "stepId": "encryptedPayments",
-            "formTitle": "PayPal Encrypted Payments",
-            "stepTitle": "Disabling PayPal Encryption Messages",
-            "faqTitle": "Disabling PayPal Encryption Messages",   
-            "faqURL": "https://www.wix.com/support/html5/article/disabling-paypal-encryption-messages", 
-            "buttonsArray": [ ]   
-        },
-
-        //SHOULD ADD INFO
-        "IPNMessage": {
-             "stepId": "IPNMessage"
-
-        },
-
-        //SHOULD ADD INFO
-        "paypalCheckoutOther": {
-             "stepId": "paypalCheckoutOther"
-        },
-
-        "paypalOrders": {
-           "stepId": "paypalOrders",
-           "formTitle": "Orders Issue:",
-           "stepTitle": "Please choose the relevant issue:",            
-           "buttonsArray": [
-                {
-                    "buttonDescription": "Orders are not appearing in the store manager",
-                    "stepId": "missingOrders"
-                }, {
-                    "buttonDescription": "Phone number missing in the Orders tab",
-                    "stepId": "missingPhoneNumber"
-                } , {
-                    "buttonDescription": "Buyers are not redirected to the Thank You page",
-                    "stepId": "thankYouPageRedirection"
-                }, {
-
-                }
-            ]
-        }, 
-
-        "missingOrders": {
-            "stepId": "missingOrders",
-
-        },
-
-        "missingPhoneNumber": {
-            "stepId": "missingPhoneNumber",
-            "formTitle": "Missing Phone Number",
-            "stepTitle": "Requiring a Customer Phone Number when Checking Out with Paypal",
-            "faqTitle": "Requiring a Customer Phone Number when Checking Out with Paypal",
-            "faqURL": " https://www.wix.com/support/html5/article/requiring-a-customer-phone-number-when-checking-out-with-paypal", 
-            "buttonsArray": [ ]   
-        } ,
-
-        //SHOULD ADD INFO
-        "thankYouPageRedirection":{
-            "stepId": "thankYouPageRedirection",
-        },
-
-        //SHOULD ADD INFO
-        "paypalOrdersOther": {
-             "stepId": "paypalOrdersOther"
-
-        }
+    "paypalOrders": {
+        "stepId": "paypalOrders",
+        "formTitle": "Guest Orders",
+        "stepTitle": "Enabling Guest Checkout for PayPal in Your Store",
+        "buttonsArray": [ ]
+    }
 }
+
+
+
+/*
+ "paypalCheckout": {
+ "stepId": "paypalCheckout",
+ "formTitle": "Checkout Issue:",
+ "stepTitle": "Please choose the relevant issue:",
+ "buttonsArray": [
+ {
+ "buttonDescription": "Enabling Guest Checkout for PayPal in Your Store",
+ "stepId": "guestCheckOut"
+ }, {
+ "buttonDescription": "Additional shipping/tax fees appear when proceeding to the checkout page",
+ "stepId": "additionalShippingOrTax"
+ }, {
+ "buttonDescription": "Unable to apply a 100% discount",
+ "stepId": "applyingDiscount"
+ }, {
+ "buttonDescription": "Unable to set the language of the checkout page",
+ "stepId": "settingCheckoutLanguage"
+ }, {
+ "buttonDescription": "Unable to checkout due to Encrypted Payments",
+ "stepId": "encryptedPayments"
+ }, {
+ "buttonDescription": "Instant Payment Notification (IPN) Message",
+ "stepId": "IPNMessage"
+ }, {
+ "buttonDescription": "Other",
+ "stepId": "paypalCheckoutOther"
+ }
+ ]
+ },
+
+ "guestCheckOut": {
+ "stepId": "guestCheckOut",
+ "formTitle": "Guest Checkout",
+ "stepTitle": "Enabling Guest Checkout for PayPal in Your Store",
+ "faqTitle": "Enabling Guest Checkout for PayPal in Your Store",
+ "faqURL": "https://www.wix.com/support/html5/article/enabling-guest-checkout-for-paypal-in-your-store",
+ "buttonsArray": [ ]
+ }
+
+
+
+
+
+
+ * "paypalCheckout": {
+ "stepId": "paypalCheckout",
+ "formTitle": "Checkout Issue:",
+ "stepTitle": "Please choose the relevant issue:",
+ "buttonsArray": [
+ {
+ "buttonDescription": "Enabling Guest Checkout for PayPal in Your Store",
+ "stepId": "guestCheckOut"
+ }, {
+ "buttonDescription": "Additional shipping/tax fees appear when proceeding to the checkout page",
+ "stepId": "additionalShippingOrTax"
+ }, {
+ "buttonDescription": "Unable to apply a 100% discount",
+ "stepId": "applyingDiscount"
+ }, {
+ "buttonDescription": "Unable to set the language of the checkout page",
+ "stepId": "settingCheckoutLanguage"
+ }, {
+ "buttonDescription": "Unable to checkout due to Encrypted Payments",
+ "stepId": "encryptedPayments"
+ }, {
+ "buttonDescription": "Instant Payment Notification (IPN) Message",
+ "stepId": "IPNMessage"
+ }, {
+ "buttonDescription": "Other",
+ "stepId": "paypalCheckoutOther"
+ }
+ ]
+ },
+
+ "guestCheckOut": {
+ "stepId": "guestCheckOut",
+ "formTitle": "Guest Checkout",
+ "stepTitle": "Enabling Guest Checkout for PayPal in Your Store",
+ "faqTitle": "Enabling Guest Checkout for PayPal in Your Store",
+ "faqURL": "https://www.wix.com/support/html5/article/enabling-guest-checkout-for-paypal-in-your-store",
+ "buttonsArray": [ ]
+ },
+
+ //SHOULD ADD INFO
+ "additionalShippingOrTax": {
+ "stepId": "additionalShippingOrTax",
+
+ },
+
+ "applyingDiscount": {
+ "stepId": "applyingDiscount",
+ "formTitle": "PayPal Discount",
+ "stepTitle": "Unable to apply a 100% discount",
+ "faqTitle": "Unable to apply a 100% discount",
+ "faqURL": "https://www.wix.com/support/html5/article/using-wix-stores-coupons-with-paypal",
+ "buttonsArray": [ ]
+ },
+
+ "settingCheckoutLanguage":{
+ "stepId": "settingCheckoutLanguage",
+ "formTitle": "PayPal Checkout Language",
+ "stepTitle": "Setting the Language of the Wix Stores PayPal Checkout Page",
+ "faqTitle": "Setting the Language of the Wix Stores PayPal Checkout Page",
+ "faqURL": "https://www.wix.com/support/html5/article/request-setting-the-language-of-the-wixstores-paypal-checkout-page",
+ "buttonsArray": [ ]
+ },
+
+ "encryptedPayments":{
+ "stepId": "encryptedPayments",
+ "formTitle": "PayPal Encrypted Payments",
+ "stepTitle": "Disabling PayPal Encryption Messages",
+ "faqTitle": "Disabling PayPal Encryption Messages",
+ "faqURL": "https://www.wix.com/support/html5/article/disabling-paypal-encryption-messages",
+ "buttonsArray": [ ]
+ },
+
+ //SHOULD ADD INFO
+ "IPNMessage": {
+ "stepId": "IPNMessage"
+
+ },
+
+ //SHOULD ADD INFO
+ "paypalCheckoutOther": {
+ "stepId": "paypalCheckoutOther"
+ },
+
+ "paypalOrders": {
+ "stepId": "paypalOrders",
+ "formTitle": "Orders Issue:",
+ "stepTitle": "Please choose the relevant issue:",
+ "buttonsArray": [
+ {
+ "buttonDescription": "Orders are not appearing in the store manager",
+ "stepId": "missingOrders"
+ }, {
+ "buttonDescription": "Phone number missing in the Orders tab",
+ "stepId": "missingPhoneNumber"
+ } , {
+ "buttonDescription": "Buyers are not redirected to the Thank You page",
+ "stepId": "thankYouPageRedirection"
+ }, {
+
+ }
+ ]
+ },
+
+ "missingOrders": {
+ "stepId": "missingOrders",
+
+ },
+
+ "missingPhoneNumber": {
+ "stepId": "missingPhoneNumber",
+ "formTitle": "Missing Phone Number",
+ "stepTitle": "Requiring a Customer Phone Number when Checking Out with Paypal",
+ "faqTitle": "Requiring a Customer Phone Number when Checking Out with Paypal",
+ "faqURL": " https://www.wix.com/support/html5/article/requiring-a-customer-phone-number-when-checking-out-with-paypal",
+ "buttonsArray": [ ]
+ } ,
+
+ //SHOULD ADD INFO
+ "thankYouPageRedirection":{
+ "stepId": "thankYouPageRedirection",
+ },
+
+ //SHOULD ADD INFO
+ "paypalOrdersOther": {
+ "stepId": "paypalOrdersOther"
+
+ }
+* */
+
 
 
 var gFormsData = {

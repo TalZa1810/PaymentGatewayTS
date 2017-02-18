@@ -1,77 +1,54 @@
 //GLOBAL VAR
-var stepPointer = 0;
-var yesIndex = 0;
-var noIndex = 1;
+var stepIDPointer = data.paymentGateway;
 
-var userPath = [];
+//var userPath = [];
 
 function main() {
 
-    //addParentFormAttribute(stepPointer , "null");
-    buildForm(stepPointer);
+    addParentFormAttribute(stepIDPointer , null);
+    buildForm(stepIDPointer);
 }
 
-function buildForm(stepNumber, title, userChoice) {
+function buildForm(stepID) {
 
     var htmlForm;
+    var backBtn;
 
-    htmlForm = '<div class=form stepNumber=' + stepNumber + "" + '>';    
-    htmlForm += buildFormTitle(gFormsData.forms[stepNumber].stepTitle);
+    htmlForm = '<div class=form id=' + stepID.stepId + "" + '>';
+    htmlForm += buildFormTitle(stepID.stepTitle);
 
-    if (gFormsData.forms[stepNumber].buttonsArray.length != 0)  {
-            htmlForm += buildFormButtons(gFormsData.forms[stepNumber]);
+    if (stepID.buttonsArray.length != 0)  {
+        htmlForm += buildFormButtons(stepID);
     }
     else{
+         /*if (gFormsData.forms[stepNumber].formTitle == "Submit ticket"){
 
-        /*
-           if (gFormsData.forms[stepNumber].formTitle == "Submit ticket"){
+         htmlForm += displayUserPath();
+         }
 
-            htmlForm += displayUserPath();
-        }     
-        */
 
-        if (gFormsData.forms[stepNumber].ticketOrFAQ === "ticket"){
+        if (data.stepId.faqURL != undefined){
             htmlForm += displayUserPath();
         }
-        else if (gFormsData.forms[stepNumber].ticketOrFAQ === "FAQ"){
-   
+        else {
             htmlForm += redirectToFAQURL();
-        }  
+        }*/
+    }
+
+    if (stepIDPointer != data.paymentGateway ){
+        backBtn = buildBackButton(stepID);
     }
 
     htmlForm += '</div>';
 
     document.getElementById('content').innerHTML = htmlForm;
-    //$('#content .regularBtn,.yesBtn,.noBtn').on("click", handleClick);
-    $('#content .btn-lg,.btn-success,.btn-danger').on("click", handleClick);
+    document.getElementById('back').innerHTML = backBtn;
 
+    // $('#content .regularBtn,.yesBtn,.noBtn').on("click", handleClick);
+    $('#content').on("click", handleClick);
+    $('#back').on("click", handleBackClick);
 }
 
-
-function redirectToFAQURL(){
-
-    var faqTitle = gFormsData.forms[event.target.id].faqTitle;
-    var faqURL= gFormsData.forms[event.target.id].faqURL;
-
-    return '<p>Click <a href="'+ faqURL +'"><b>here</b></a> to learn more about  <b>'+ faqTitle + '</b>.</p>';
-}
-
-function displayUserPath(){
-
-    var htmlStr ='';
-
-      userPath.forEach(function (infoUserPath) {
-
-            htmlStr += displayUserChoice(infoUserPath);
-        });
-
-      return htmlStr;  
-}
-
-function displayUserChoice(infoUserPath){
-
-    return '<p>' + infoUserPath.formTitle +'  '+ infoUserPath.userChoice + '</p><br>';
-}
 
 function buildFormTitle(stepTitle) {
 
@@ -79,43 +56,30 @@ function buildFormTitle(stepTitle) {
     return htmlStr;
 }
 
-function buildFormButtons(step) {
+function buildFormButtons(stepId) {
 
     var htmlStr;
 
-    if (step.isYesNo == "false") {
-        //block elements
-       
-        //htmlStr = '<div class="' + step.buttonsTitle + '">';
-        htmlStr = '<div>';
+    //htmlStr = '<div class="' + stepId.buttonsTitle + '">';
+    htmlStr = '<div>';
 
-        step.buttonsArray.forEach(function (button) {
+    stepId.buttonsArray.forEach(function (button) {
 
-          //htmlStr += buildButton(button, "regularBtn");
-          htmlStr += buildButton(button, "btn btn-default btn-lg");
+            //htmlStr += buildButton(button, "regularBtn");
+            htmlStr += buildButton(button, "btn btn-default btn-lg");
         });
 
-        htmlStr += '</div';
-    }
-    else {
-        //inline elements
-        htmlStr = '<span class="' + step.buttonsTitle + '">';
-        //htmlStr += buildButton(step.buttonsArray[yesIndex], "yesBtn");
-        htmlStr += buildButton(step.buttonsArray[yesIndex], "btn btn-lg btn-success");
-        
-        //htmlStr += buildButton(step.buttonsArray[noIndex], "noBtn");
-        htmlStr += buildButton(step.buttonsArray[noIndex], "btn btn-lg btn-danger");
-        htmlStr += '</span';
-    }
+    htmlStr += '</div>';
 
     return htmlStr;
+
 }
 
 function buildButton(button, classOption) {
 
-    var htmlStr = '<button  type="button" class="'+classOption +'" id='+button.stepNumber+'>'+ button.buttonDescription +'</button>';
+    var htmlStr = '<button  type="button" class="'+classOption +'" id='+button.stepId+'>'+ button.buttonDescription +'</button>';
 
-     if (classOption === "btn btn-default btn-lg") {
+    if (classOption === "btn btn-default btn-lg") {
         htmlStr += '</br>';
     }
 
@@ -123,22 +87,80 @@ function buildButton(button, classOption) {
 }
 
 function updateNextStep(currentStep) {
-    stepPointer = currentStep;
+
+    stepIDPointer = data[currentStep];
 }
 
 function handleClick(buttonClicked) {
 
-    var originFormNumber = $( ".form" ).attr("stepNumber");
-    
-    var originFormTitle = gFormsData.forms[originFormNumber].formTitle;
+    var originFormId = $( ".form" ).attr("id");
+
+    var originalFormTitle = data[originFormId].stepTitle;
 
     updateNextStep(event.target.id);
 
     var buttonClickedDescription = event.target.innerHTML;
 
-    storeUserSelection(buttonClickedDescription, originFormTitle);
-    buildForm(stepPointer);
+    //storeUserSelection(buttonClickedDescription, originFormTitle);
+    buildForm(stepIDPointer);
 }
+
+function handleBackClick(event) {
+
+    var elmID = $( ".form" ).attr("id");
+    var parentID = data[elmID].parent;
+
+    updateNextStep(parentID);
+    //
+    // var buttonClickedDescription = event.target.innerHTML;
+
+    buildForm(stepIDPointer);
+}
+
+function addParentFormAttribute( currentNode ,parentNumber){
+
+    currentNode["parent"] = parentNumber;
+
+    if (currentNode.buttonsArray.length  !=  0){
+        currentNode.buttonsArray.forEach(function (singleBtn) {
+            addParentFormAttribute( data[singleBtn.stepId]  , currentNode.stepId); //passing parentID and not currentNoda
+        });
+    }
+}
+
+function buildBackButton( currentNode ) {
+
+    var htmlStr = '<button  type="button" class="backBtn btn btn-default btn-lg" id=' + currentNode.stepId +'> Back </button>';
+
+    return htmlStr;
+}
+
+/*
+ function redirectToFAQURL(){
+
+ var faqTitle = data.stepId[event.target.id].faqTitle;
+ var faqURL= data.stepId[event.target.id].faqURL;
+
+ return '<p>Click <a href="'+ faqURL +'"><b>here</b></a> to learn more about  <b>'+ faqTitle + '</b>.</p>';
+ }
+
+ function displayUserPath(){
+
+ var htmlStr ='';
+
+ userPath.forEach(function (infoUserPath) {
+
+ htmlStr += displayUserChoice(infoUserPath);
+ });
+
+ return htmlStr;
+ }
+
+ function displayUserChoice(infoUserPath){
+
+ return '<p>' + infoUserPath.formTitle +'  '+ infoUserPath.userChoice + '</p><br>';
+ }
+
 
 function storeUserSelection(userChoice, originFormTitle) {
 
@@ -146,37 +168,4 @@ function storeUserSelection(userChoice, originFormTitle) {
     userPath.push(choiceSelected);
 }
 
-function infoUserPath(userChoice, originFormTitle) {
-
-    this.formTitle = originFormTitle;
-    this.userChoice = userChoice;
-
-    this.getFormTitle = function () {
-        return this.formTitle;
-    };
-
-    this.getUserChoice = function () {
-        return this.userChoice;
-    };
-
-    return true;
-}
-
-function buildBackButton(){
-    //building back button
-    //deleting from userPath array previous 
-}
-
-
-function addParentFormAttribute( cuurentNode ,parentNumber){ 
-    
-   //gFormsData.forms[cuurentNode]["parent"] = parentNumber;
-    gFormsData.forms[cuurentNode].parent = parentNumber;
-
-  if (gFormsData.forms[cuurentNode].buttonsArray.length  !=  0){
-    gFormsData.forms[cuurentNode].buttonsArray.forEach(function (singleBtn) {        
-         addParentFormAttribute( singleBtn.stepNumber  , cuurentNode); //passing parentID and not currentNoda
-       });  
-    }      
-}
-
+*/
