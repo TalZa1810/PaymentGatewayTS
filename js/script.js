@@ -13,7 +13,7 @@ function buildForm(stepID) {
 
     document.getElementById("back").style.visibility = "hidden";
 
-    htmlForm = '<div class=form id=' + stepID.stepId + "" + '>';
+    htmlForm = '<div class=form id=' + stepID.stepId + '>';
     htmlForm += buildFormTitle(stepID.stepTitle);
 
     if (stepID.buttonsArray.length != 0)  {
