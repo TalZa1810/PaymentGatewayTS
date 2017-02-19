@@ -20,17 +20,7 @@ function buildForm(stepID) {
         htmlForm += buildFormButtons(stepID);
     }
     else{
-         /*if (gFormsData.forms[stepNumber].formTitle == "Submit ticket"){
-
-         htmlForm += displayUserPath();
-         }
-
-
-        if (data.stepId.faqURL != undefined){
-            htmlForm += displayUserPath();
-        }
-        else {
-            htmlForm += redirectToFAQURL();
+         /*
         }*/
     }
 
@@ -45,7 +35,7 @@ function buildForm(stepID) {
     if (backBtn != undefined){
         document.getElementById('back').innerHTML = backBtn;
         $('#back').on("click", handleBackClick);
-    } 
+    }
 
     $('#content').on("click", handleClick);
 }
@@ -61,12 +51,9 @@ function buildFormButtons(stepId) {
 
     var htmlStr;
 
-    //htmlStr = '<div class="' + stepId.buttonsTitle + '">';
     htmlStr = '<div>';
 
     stepId.buttonsArray.forEach(function (button) {
-
-            //htmlStr += buildButton(button, "regularBtn");
             htmlStr += buildButton(button, "btn btn-default btn-lg");
         });
 
@@ -102,7 +89,6 @@ function handleClick(buttonClicked) {
 
     var buttonClickedDescription = event.target.innerHTML;
 
-    //storeUserSelection(buttonClickedDescription, originFormTitle);
     buildForm(stepIDPointer);
 }
 
@@ -112,9 +98,6 @@ function handleBackClick(event) {
     var parentID = data[elmID].parent;
 
     updateNextStep(parentID);
-    //
-    // var buttonClickedDescription = event.target.innerHTML;
-
     buildForm(stepIDPointer);
 }
 
@@ -145,28 +128,4 @@ function buildBackButton( currentNode ) {
  return '<p>Click <a href="'+ faqURL +'"><b>here</b></a> to learn more about  <b>'+ faqTitle + '</b>.</p>';
  }
 
- function displayUserPath(){
-
- var htmlStr ='';
-
- userPath.forEach(function (infoUserPath) {
-
- htmlStr += displayUserChoice(infoUserPath);
- });
-
- return htmlStr;
- }
-
- function displayUserChoice(infoUserPath){
-
- return '<p>' + infoUserPath.formTitle +'  '+ infoUserPath.userChoice + '</p><br>';
- }
-
-
-function storeUserSelection(userChoice, originFormTitle) {
-
-    var choiceSelected = new infoUserPath(userChoice, originFormTitle);
-    userPath.push(choiceSelected);
-}
-
-*/
+ */
