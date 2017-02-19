@@ -1,8 +1,6 @@
 //GLOBAL VAR
 var stepIDPointer = data.paymentGateway;
 
-//var userPath = [];
-
 function main() {
     addParentFormAttribute(stepIDPointer , null);
     buildForm(stepIDPointer);
@@ -12,6 +10,8 @@ function buildForm(stepID) {
 
     var htmlForm;
     var backBtn;
+
+    document.getElementById("back").style.visibility = "hidden";
 
     htmlForm = '<div class=form id=' + stepID.stepId + "" + '>';
     htmlForm += buildFormTitle(stepID.stepTitle);
@@ -33,6 +33,7 @@ function buildForm(stepID) {
     document.getElementById('content').innerHTML = htmlForm;
 
     if (backBtn != undefined){
+        document.getElementById("back").style.visibility = "visible";
         document.getElementById('back').innerHTML = backBtn;
         $('#back').on("click", handleBackClick);
     }
