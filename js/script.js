@@ -4,7 +4,6 @@ var stepIDPointer = data.paymentGateway;
 //var userPath = [];
 
 function main() {
-
     addParentFormAttribute(stepIDPointer , null);
     buildForm(stepIDPointer);
 }
@@ -35,18 +34,20 @@ function buildForm(stepID) {
         }*/
     }
 
-    if (stepIDPointer != data.paymentGateway ){
+    if (stepIDPointer.stepId != data.paymentGateway.stepId ){
         backBtn = buildBackButton(stepID);
     }
 
     htmlForm += '</div>';
 
     document.getElementById('content').innerHTML = htmlForm;
-    document.getElementById('back').innerHTML = backBtn;
 
-    // $('#content .regularBtn,.yesBtn,.noBtn').on("click", handleClick);
+    if (backBtn != undefined){
+        document.getElementById('back').innerHTML = backBtn;
+        $('#back').on("click", handleBackClick);
+    } 
+
     $('#content').on("click", handleClick);
-    $('#back').on("click", handleBackClick);
 }
 
 
