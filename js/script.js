@@ -1,5 +1,5 @@
 //GLOBAL VAR
-var stepIDPointer = data.paymentGateway;
+var stepIDPointer = data.troubleshootingCategory;
 
 function main() {
     addParentFormAttribute(stepIDPointer , null);
@@ -20,11 +20,10 @@ function buildForm(stepID) {
         htmlForm += buildFormButtons(stepID);
     }
     else{
-         /*
-        }*/
+        htmlForm += redirectToFAQURL();
     }
 
-    if (stepIDPointer.stepId != data.paymentGateway.stepId ){
+    if (stepIDPointer.stepId != data.troubleshootingCategory.stepId ){
         backBtn = buildBackButton(stepID);
     }
 
@@ -39,6 +38,14 @@ function buildForm(stepID) {
     }
 
     $('#content').on("click", handleClick);
+}
+
+function redirectToFAQURL(){
+
+    var faqTitle = stepIDPointer.faqTitle;
+    var faqURL= stepIDPointer.faqURL;
+
+    return '<p>Click <a href="'+ faqURL +'"><b>here</b></a> to learn more about  <b>'+ faqTitle + '</b>.</p>';
 }
 
 
@@ -111,13 +118,6 @@ function buildBackButton( currentNode ) {
     return htmlStr;
 }
 
-/*
- function redirectToFAQURL(){
 
- var faqTitle = data.stepId[event.target.id].faqTitle;
- var faqURL= data.stepId[event.target.id].faqURL;
 
- return '<p>Click <a href="'+ faqURL +'"><b>here</b></a> to learn more about  <b>'+ faqTitle + '</b>.</p>';
- }
 
- */
