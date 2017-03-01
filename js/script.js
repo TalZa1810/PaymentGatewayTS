@@ -34,8 +34,8 @@ function buildForm(stepID) {
 
     if (backBtn != undefined){
         document.getElementById("back").style.visibility = "visible";
-        document.getElementById('back').innerHTML = backBtn;
-        $('#back').on("click", handleBackClick);
+        document.getElementById("back").innerHTML = backBtn;
+        $('#back').on("click", handleClick);
     }
 
     $('#content').on("click", handleClick);
@@ -93,15 +93,6 @@ function handleClick(buttonClicked) {
     buildForm(stepIDPointer);
 }
 
-function handleBackClick(event) {
-
-    var elmID = $( ".form" ).attr("id");
-    var parentID = data[elmID].parent;
-
-    updateNextStep(parentID);
-    buildForm(stepIDPointer);
-}
-
 function addParentFormAttribute( currentNode ,parentNumber){
 
     currentNode["parent"] = parentNumber;
@@ -115,7 +106,7 @@ function addParentFormAttribute( currentNode ,parentNumber){
 
 function buildBackButton( currentNode ) {
 
-    var htmlStr = '<button  type="button" class="backBtn btn btn-default btn-lg" id=' + currentNode.stepId +'> Back </button>';
+    var htmlStr = '<button  type="button" class="backBtn btn btn-default btn-lg" id=' + currentNode.parent +'> Back </button>';
 
     return htmlStr;
 }
