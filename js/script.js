@@ -20,7 +20,12 @@ function buildForm(stepID) {
         htmlForm += buildFormButtons(stepID);
     }
     else{
-        htmlForm += redirectToFAQURL();
+        if (stepID.instructions != undefined){
+            htmlForm += addInstructions();
+        }
+        else {
+            htmlForm += redirectToFAQURL();
+        }
     }
 
     if (stepIDPointer.stepId != data.troubleshootingCategory.stepId ){
@@ -39,15 +44,6 @@ function buildForm(stepID) {
 
     $('#content').on("click", handleClick);
 }
-
-function redirectToFAQURL(){
-
-    var faqTitle = stepIDPointer.faqTitle;
-    var faqURL= stepIDPointer.faqURL;
-
-    return '<p>Click <a href="'+ faqURL +'"><b>here</b></a> to learn more about  <b>'+ faqTitle + '</b>.</p>';
-}
-
 
 function buildFormTitle(stepTitle) {
 
@@ -106,7 +102,7 @@ function addParentFormAttribute( currentNode ,parentNumber){
 
     if (currentNode.buttonsArray.length  !=  0){
         currentNode.buttonsArray.forEach(function (singleBtn) {
-            addParentFormAttribute( data[singleBtn.stepId]  , currentNode.stepId); //passing parentID and not currentNoda
+            addParentFormAttribute( data[singleBtn.stepId]  , currentNode.stepId); //passing parentID and not currentNode
         });
     }
 }
@@ -116,6 +112,19 @@ function buildBackButton( currentNode ) {
     var htmlStr = '<button  type="button" class="backBtn btn btn-default btn-lg" id=' + currentNode.parent +'> Back </button>';
 
     return htmlStr;
+}
+
+function redirectToFAQURL(){
+
+    var faqTitle = stepIDPointer.faqTitle;
+    var faqURL= stepIDPointer.faqURL;
+
+    return '<p> Please link to ticket to the <a href="'+ faqURL +'"><b> article </b></a> of  <b>'+ faqTitle + '</b>.</p>';
+}
+
+function addInstructions() {
+
+    return  '<p>'+ stepIDPointer.instructions + '</p>';
 }
 
 
