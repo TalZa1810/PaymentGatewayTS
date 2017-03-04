@@ -11,8 +11,6 @@ function buildForm(stepID) {
     var htmlForm;
     var backBtn;
 
-    //document.getElementById("back").style.visibility = "hidden";
-
     htmlForm = '<div class=form id=' + stepID.stepId + '>';
     htmlForm += buildFormTitle(stepID.stepTitle);
 
@@ -38,14 +36,12 @@ function buildForm(stepID) {
     htmlForm += '</div>';
 
     document.getElementById('content').innerHTML = htmlForm;
+    $('#content').on("click", handleClick);
 
     if (backBtn != undefined){
-        document.getElementById("back").style.visibility = "visible";
         document.getElementById("back").innerHTML = backBtn;
         $('#back').on("click", handleClick);
     }
-
-    $('#content').on("click", handleClick);
 }
 
 function buildFormTitle(stepTitle) {
@@ -67,16 +63,11 @@ function buildFormButtons(stepId) {
     htmlStr += '</div>';
 
     return htmlStr;
-
 }
 
 function buildButton(button, classOption) {
 
-    var htmlStr = '<button  type="button" class="'+classOption +'" id='+button.stepId+'>'+ button.buttonDescription +'</button>';
-
-    if (classOption === "btn btn-default btn-lg") {
-        htmlStr += '</br>';
-    }
+    var htmlStr = '<button  type="button" class="'+classOption +'" id='+button.stepId+'>'+ button.buttonDescription +'</button> </br>';
 
     return htmlStr;
 }
@@ -86,15 +77,15 @@ function updateNextStep(currentStep) {
     stepIDPointer = data[currentStep];
 }
 
-function handleClick(buttonClicked) {
+function handleClick( ) {
 
-    var originFormId = $( ".form" ).attr("id");
+    //var originFormId = $( ".form" ).attr("id");
 
-    var originalFormTitle = data[originFormId].stepTitle;
+    //var originalFormTitle = data[originFormId].stepTitle;
 
     updateNextStep(event.target.id);
 
-    var buttonClickedDescription = event.target.innerHTML;
+    //var buttonClickedDescription = event.target.innerHTML;
 
     buildForm(stepIDPointer);
 }
