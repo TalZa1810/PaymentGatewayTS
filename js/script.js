@@ -11,7 +11,7 @@ function buildForm(stepID) {
     var htmlForm;
     var backBtn;
 
-    document.getElementById("back").style.visibility = "hidden";
+    //document.getElementById("back").style.visibility = "hidden";
 
     htmlForm = '<div class=form id=' + stepID.stepId + '>';
     htmlForm += buildFormTitle(stepID.stepTitle);
@@ -30,6 +30,9 @@ function buildForm(stepID) {
 
     if (stepIDPointer.stepId != data.troubleshootingCategory.stepId ){
         backBtn = buildBackButton(stepID);
+    }
+    else{
+        $('.backBtn ').remove();
     }
 
     htmlForm += '</div>';

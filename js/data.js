@@ -9,7 +9,11 @@ var data = {
             {
                 "buttonDescription": "Troubleshooting orders issues",
                 "stepId": "ordersIssues"
-            }
+            }/*,
+            {
+                "buttonDescription": "Troubleshooting shipping issues",
+                "stepId": "ordersIssues"
+            }*/
         ]
     },
 
@@ -43,8 +47,7 @@ var data = {
         ]
     },
 
-    // -- 1.1.1.1 --
-
+    // -- 1.1.1 --
     "userAcceptedEmailNotification": {
         "stepId": "userAcceptedEmailNotification",
         "formTitle": "Troubleshooting Orders Issues",
@@ -61,8 +64,18 @@ var data = {
         ]
     },
 
-    // -- 1.1.1.1.1.1 --
+    // -- 1.1.2 --
+    "userDidntAcceptedEmailNotification": {
+        "stepId": "userDidntAcceptedEmailNotification",
+        "formTitle": "Troubleshooting Orders Issues",
+        "stepTitle": "Order not appearing in the store manager",
+        "buttonsArray": [  ],
+        "instructions": "Ask the user to contact the online payment provider.",
+        "Note": "For an order to appear on the store manager, the payment has to be completed. This means that the status of the order has to be approved."
 
+    },
+
+    // -- 1.1.1.1 --
     "orderExistStoreManager": {
         "stepId": "orderExistStoreManager",
         "formTitle": "Troubleshooting Orders Issues",
@@ -71,7 +84,7 @@ var data = {
         "instructions": "Provide the user with the order number and a screenshot of it."
     },
 
-    // -- 1.1.1.1.2 --
+    // -- 1.1.1.2 --
     "orderDoesntExistStoreManager": {
         "stepId": "orderDoesntExistStoreManager",
         "formTitle": "Missing orders in the store manager",
@@ -96,6 +109,7 @@ var data = {
         ]
     },
 
+    // -- 1.1.1.2.1 --
     "missingOrdersPayPal": {
         "stepId": "missingOrdersPayPal",
         "formTitle": "Missing orders in the store manager",
@@ -105,6 +119,7 @@ var data = {
         "faqURL": "https://support.wix.com/en/article/internal-wix-stores-paypal-orders-which-do-not-appear-in-the-store-manager"
     },
 
+    // -- 1.1.1.2.2 --
     "missingOrdersStripe": {
         "stepId": "missingOrdersStripe",
         "formTitle": "Missing orders in the store manager",
@@ -114,6 +129,7 @@ var data = {
         "faqURL": "https://support.wix.com/en/article/internal-wix-stores-orders-which-do-not-appear-in-the-store-manager-other-than-paypal"
     },
 
+    // -- 1.1.1.2.3 --
     "missingOrdersSquare": {
         "stepId": "missingOrdersSquare",
         "formTitle": "Missing orders in the store manager",
@@ -124,6 +140,7 @@ var data = {
 
     },
 
+    // -- 1.1.1.2.4 --
     "missingOrdersLeumiCard": {
         "stepId": "missingOrdersLeumiCard",
         "formTitle": "Missing orders in the store manager",
@@ -131,79 +148,12 @@ var data = {
         "buttonsArray": [  ],
         "faqTitle": "Orders Which Do Not Appear in the Store Manager (other than PayPal)" ,
         "faqURL": "https://support.wix.com/en/article/internal-wix-stores-orders-which-do-not-appear-in-the-store-manager-other-than-paypal"
-    },
-
-
-    // NOTE + INSTRUCTIONS
-    "userDidntAcceptedEmailNotification": {
-        "stepId": "userDidntAcceptedEmailNotification",
-        "formTitle": "Troubleshooting Orders Issues",
-        "stepTitle": "Order not appearing in the store manager",
-        "buttonsArray": [  ],
-        "instructions": "Ask the user to contact the online payment provider.",
-        "Note": "For an order to appear on the store manager, the payment has to be completed. This means that the status of the order has to be approved."
-
     }
+
+
+
+
+
+
+
 }
-
-/*
-
- , {
- "buttonDescription": "Stripe",
- "stepId": "missingOrdersStripe"
- },
- {
- "buttonDescription": "Square",
- "stepId": "missingOrdersSquare"
- }, {
- "buttonDescription": "Leumi Card",
- "stepId": "missingOrdersLeumiCard"
- }
-
-*/
-
-
-/*
-* "paymentGateway": {
- "stepId": "paymentGateway",
- "formTitle": "Payment Gateway:",
- "stepTitle": "Please select the relevant payment gateway",
- "buttonsArray": [
- {
- "buttonDescription": "PayPal",
- "stepId": "paypalSubjectIssues"
- }
- ]
- },
-
- "paypalSubjectIssues": {
- "stepId": "paypalSubjectIssues",
- "formTitle": "PayPal Subject Issue:",
- "stepTitle": "To which subject the issue is related?",
- "buttonsArray": [
- {
- "buttonDescription": "Checkout",
- "stepId": "paypalCheckout"
- }, {
- "buttonDescription": "Orders",
- "stepId": "paypalOrders"
- }
- ]
- },
-
- "paypalCheckout": {
- "stepId": "paypalCheckout",
- "formTitle": "Checkout Issue:",
- "stepTitle": "Please choose the relevant issue:",
- "buttonsArray": []
- },
-
- "paypalOrders": {
- "stepId": "paypalOrders",
- "formTitle": "Guest Orders",
- "stepTitle": "Enabling Guest Checkout for PayPal in Your Store",
- "buttonsArray": [ ]
- }
-*
-*
-* */
