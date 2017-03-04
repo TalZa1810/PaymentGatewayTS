@@ -149,11 +149,84 @@ var data = {
         "faqTitle": "Orders Which Do Not Appear in the Store Manager (other than PayPal)" ,
         "faqURL": "https://support.wix.com/en/article/internal-wix-stores-orders-which-do-not-appear-in-the-store-manager-other-than-paypal"
     }
-
-
-
-
-
-
-
 }
+
+/*
+
+ ,
+
+
+ // -- 2 --
+ "shippingIssues": {
+ "stepId": "shippingIssues",
+ "formTitle": "Troubleshooting Category",
+ "stepTitle": "Has the user created shipping rules by a weight range?",
+ "buttonsArray": [
+ {
+ "buttonDescription": "Yes",
+ "stepId": "userCreatedShippingRulesByWeight"
+ },
+ {
+ "buttonDescription": "No",
+ "stepId": "userNotCreatedShippingRulesByWeight"
+ }
+ ]
+ },
+
+ // -- 2.1 --
+ "userCreatedShippingRulesByWeight": {
+ "stepId": "userCreatedShippingRulesByWeight",
+ "formTitle": "Shipping Rules By Weight",
+ "stepTitle": "Shipping Rules By Weight",
+ "buttonsArray": [  ],
+ "csInternalURL": "https://csinternal.wixanswers.com/en/article/shipping-was-calculated-incorrectly",
+ "instructions": "Make sure that the user actually added a weight value to his products.",
+ },
+
+
+ // --2.2 --
+ "userNotCreatedShippingRulesByWeight": {
+ "stepId": "userNotCreatedShippingRulesByWeight",
+ "formTitle": "Shipping Rules",
+ "stepTitle": "Does the user get additional shipping charges when proceeding to the PayPal checkout form Wix?",
+ "buttonsArray": [
+ {
+ "buttonDescription": "Yes",
+ "stepId": "additionalChargesPayPalProceeding"
+ },
+ {
+ "buttonDescription": "No",
+ "stepId": "shippingCalculatedIncorrectly"
+ }
+ ]
+ },
+
+ // -- 2.2.1 --
+ "additionalChargesPayPalProceeding": {
+ "stepId": "additionalChargesPayPalProceeding",
+ "formTitle": "Shipping Rules",
+ "stepTitle": "Does the user get additional shipping charges when proceeding to the PayPal checkout form Wix?",
+ "buttonsArray": [
+ {
+ "buttonDescription": "Yes",
+ "stepId": "additionalChargesPayPalProceeding"
+ },
+ {
+ "buttonDescription": "No",
+ "stepId": "shippingCalculatedIncorrectly"
+ }
+ ]
+ },
+
+ // -- 2.2.2 --
+ "shippingCalculatedIncorrectly": {
+ "stepId": "shippingCalculatedIncorrectly",
+ "formTitle": "Shipping Rules",
+ "stepTitle": "Does the user get additional shipping charges when proceeding to the PayPal checkout form Wix?",
+ "buttonsArray": [ ],
+ "faqTitle": "​Wix Stores Shipping/Taxes Are Calculated Incorrectly" ,
+ "faqURL": "https://support.wix.com/en/article/internal-%E2%80%8Bwix-stores-shippingtaxes-are-calculated-incorrectly"
+ }
+
+
+ */

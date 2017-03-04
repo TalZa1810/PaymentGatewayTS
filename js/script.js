@@ -52,9 +52,7 @@ function buildFormTitle(stepTitle) {
 
 function buildFormButtons(stepId) {
 
-    var htmlStr;
-
-    htmlStr = '<div>';
+    var htmlStr = '<div>';
 
     stepId.buttonsArray.forEach(function (button) {
             htmlStr += buildButton(button, "btn btn-default btn-lg");
@@ -67,7 +65,7 @@ function buildFormButtons(stepId) {
 
 function buildButton(button, classOption) {
 
-    var htmlStr = '<button  type="button" class="'+classOption +'" id='+button.stepId+'>'+ button.buttonDescription +'</button> </br>';
+    var htmlStr = '<button type="button" class="'+classOption +'" id='+button.stepId+'>'+ button.buttonDescription +'</button> </br>';
 
     return htmlStr;
 }
@@ -96,15 +94,14 @@ function addParentFormAttribute( currentNode ,parentNumber){
 
     if (currentNode.buttonsArray.length  !=  0){
         currentNode.buttonsArray.forEach(function (singleBtn) {
-            addParentFormAttribute( data[singleBtn.stepId]  , currentNode.stepId); //passing parentID and not currentNode
+            addParentFormAttribute( data[singleBtn.stepId] , currentNode.stepId); //passing parentID and not currentNode
         });
     }
 }
 
 function buildBackButton( currentNode ) {
 
-    var htmlStr = '<button  type="button" class="backBtn btn btn-default btn-lg" id=' + currentNode.parent +'> Back </button>';
-
+    var htmlStr = '<button type="button" class="backBtn btn btn-default btn-lg" id=' + currentNode.parent +'> Back </button>';
     return htmlStr;
 }
 
@@ -117,7 +114,6 @@ function redirectToFAQURL(){
 }
 
 function addInstructions() {
-
     return  '<p>'+ stepIDPointer.instructions + '</p>';
 }
 
