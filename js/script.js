@@ -49,7 +49,6 @@ function buildForm(stepID) {
     //TODO add clean up here!!!!
     //$('SOME').off('click');
     //  $(selector).off(event,selector,function(eventObj),map)
-
 }
 
 function buildFormTitle(stepTitle) {
