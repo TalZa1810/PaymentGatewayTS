@@ -1,4 +1,4 @@
-var data = {
+let data = {
 
     // -- A --
     "troubleshootingCategory": {
@@ -12,7 +12,7 @@ var data = {
             }/*,
             {
                 "buttonDescription": "Troubleshooting shipping issues",
-                "stepId": "ordersIssues"
+                "stepId": "shippingIssues"
             }*/
         ]
     },
@@ -148,6 +148,24 @@ var data = {
         "buttonsArray": [  ],
         "faqTitle": "Orders Which Do Not Appear in the Store Manager (other than PayPal)" ,
         "faqURL": "https://support.wix.com/en/article/internal-wix-stores-orders-which-do-not-appear-in-the-store-manager-other-than-paypal"
+    },
+
+
+    // -- 2 --
+    "shippingIssues": {
+        "stepId": "shippingIssues",
+        "formTitle": "Troubleshooting Category",
+        "stepTitle": "Has the user created shipping rules by a weight range?",
+        "buttonsArray": [
+            {
+                "buttonDescription": "Yes",
+                "stepId": "userCreatedShippingRulesByWeight"
+            }/*,
+            {
+                "buttonDescription": "No",
+                "stepId": "userNotCreatedShippingRulesByWeight"
+            }*/
+        ]
     }
 }
 
@@ -155,23 +173,6 @@ var data = {
 
  ,
 
-
- // -- 2 --
- "shippingIssues": {
- "stepId": "shippingIssues",
- "formTitle": "Troubleshooting Category",
- "stepTitle": "Has the user created shipping rules by a weight range?",
- "buttonsArray": [
- {
- "buttonDescription": "Yes",
- "stepId": "userCreatedShippingRulesByWeight"
- },
- {
- "buttonDescription": "No",
- "stepId": "userNotCreatedShippingRulesByWeight"
- }
- ]
- },
 
  // -- 2.1 --
  "userCreatedShippingRulesByWeight": {
@@ -181,7 +182,9 @@ var data = {
  "buttonsArray": [  ],
  "csInternalURL": "https://csinternal.wixanswers.com/en/article/shipping-was-calculated-incorrectly",
  "instructions": "Make sure that the user actually added a weight value to his products.",
- },
+ }
+
+
 
 
  // --2.2 --
