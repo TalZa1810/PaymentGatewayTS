@@ -1,5 +1,5 @@
 //GLOBAL VAR
-let stepIDPointer = data.troubleshootingCategory;
+var stepIDPointer = data.troubleshootingCategory;
 
 function main() {
     addParentFormAttribute(stepIDPointer, null);
@@ -8,8 +8,8 @@ function main() {
 
 function buildForm(stepID) {
 
-    let htmlForm;
-    let backBtn;
+    var htmlForm;
+    var backBtn;
 
     htmlForm = '<div class=form id=' + stepID.stepId + '>';
     htmlForm += buildFormTitle(stepID.stepTitle);
@@ -18,10 +18,16 @@ function buildForm(stepID) {
         htmlForm += buildFormButtons(stepID);
     }
     else {
-        if (stepID.instructions != undefined) {
+
+        if (stepID.instructions) {
             htmlForm += addInstructions();
         }
-        else {
+
+        if (stepID.csInternalURL){
+            htmlForm += csInternalURL();
+        }
+
+        if (stepID.faqURL) {
             htmlForm += redirectToFAQURL();
         }
     }
@@ -46,21 +52,18 @@ function buildForm(stepID) {
         document.getElementById("back").innerHTML = backBtn;
         $('#back').on("click", handleClick);
     }
-    //TODO add clean up here!!!!
-    //$('SOME').off('click');
-    //  $(selector).off(event,selector,function(eventObj),map)
 }
 
 function buildFormTitle(stepTitle) {
 
-    let htmlStr = '<h4>' + stepTitle + '</h4>';
+    var htmlStr = '<h4>' + stepTitle + '</h4>';
     // `<h4>${stepTitle}</h4>`
     return htmlStr;
 }
 
 function buildFormButtons(stepId) {
 
-    let htmlStr = '<div>';
+    var htmlStr = '<div>';
 
     stepId.buttonsArray.forEach(function (button) {
         htmlStr += buildButton(button, "btn btn-default btn-lg");
@@ -73,7 +76,7 @@ function buildFormButtons(stepId) {
 
 function buildButton(button, classOption) {
 
-    let htmlStr = '<button type="button" class="' + classOption + '" id=' + button.stepId + '>' + button.buttonDescription + '</button> </br>';
+    var htmlStr = '<button type="button" class="' + classOption + '" id=' + button.stepId + '>' + button.buttonDescription + '</button> </br>';
 
     return htmlStr;
 }
@@ -102,22 +105,28 @@ function addParentFormAttribute(currentNode, parentNumber) {
 
 function buildBackButton(currentNode) {
 
-    let htmlStr = '<button type="button" class="backBtn btn btn-default btn-lg" id=' + currentNode.parent + '> Back </button>';
+    var htmlStr = '<button type="button" class="backBtn btn btn-default btn-lg" id=' + currentNode.parent + '> Back </button>';
     return htmlStr;
 }
 
 function redirectToFAQURL() {
 
-    let faqTitle = stepIDPointer.faqTitle;
-    let faqURL = stepIDPointer.faqURL;
+    var faqTitle = stepIDPointer.faqTitle;
+    var faqURL = stepIDPointer.faqURL;
 
-    return '<p> Please link to ticket to the <a href="' + faqURL + '"><b> article </b></a> of  <b>' + faqTitle + '</b>.</p>';
+    return '<p> Please link to ticket to the <a href="' + faqURL + '"><b>article</b></a> of <b>' + faqTitle + '</b>.</p>';
 }
 
 function addInstructions() {
     return '<p>' + stepIDPointer.instructions + '</p>';
 }
 
+function csInternalURL() {
 
+    var csInternalURL = stepIDPointer.csInternalURL;
+
+    return '<p> Click <a href="' + csInternalURL + '"><b>here</b></a> for further information.</p>';
+
+}
 
 
