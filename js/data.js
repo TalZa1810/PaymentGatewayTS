@@ -13,9 +13,14 @@ let data = {
             {
                 "buttonDescription": "Troubleshooting shipping issues",
                 "stepId": "shippingIssues"
+            },
+            {
+                "buttonDescription": "Troubleshooting store manager issues",
+                "stepId": "storeManagerIssues"
             }
         ]
     },
+
 
     // -- 1 --
     "ordersIssues": {
@@ -150,7 +155,6 @@ let data = {
         "faqURL": "https://support.wix.com/en/article/internal-wix-stores-orders-which-do-not-appear-in-the-store-manager-other-than-paypal"
     },
 
-
     // -- 2 --
     "shippingIssues": {
         "stepId": "shippingIssues",
@@ -177,7 +181,6 @@ let data = {
         "csInternalURL": "https://csinternal.wixanswers.com/en/article/shipping-was-calculated-incorrectly",
         "instructions": "Make sure that the user added a weight value to his products.",
     },
-
 
     // --2.2 --
     "userNotCreatedShippingRulesByWeight": {
@@ -206,7 +209,6 @@ let data = {
         "instructions": "If you can recreate, it means that the user has created additional shipping rules in his PayPal account and he will need to disable them."
     },
 
-
     // -- 2.2.2 --
     "shippingCalculatedIncorrectly": {
         "stepId": "shippingCalculatedIncorrectly",
@@ -215,6 +217,44 @@ let data = {
         "buttonsArray": [ ],
         "faqTitle": "​Wix Stores Shipping/Taxes Are Calculated Incorrectly",
         "faqURL": "https://support.wix.com/en/article/internal-%E2%80%8Bwix-stores-shippingtaxes-are-calculated-incorrectly"
+    },
+
+    // -- 3 --
+    "storeManagerIssues": {
+        "stepId": "storeManagerIssues",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "Please select the relevant category:",
+        "buttonsArray": [
+            {
+                "buttonDescription": "Unable to connect the online payment method on the store manager",
+                "stepId": "unableConnectingPaymentStoreManager"
+            }
+        ]
+    },
+
+    // -- 3.1 --
+    "unableConnectingPaymentStoreManager": {
+        "stepId": "unableConnectingPaymentStoreManager",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "Please select the relevant payment gateway:",
+        "buttonsArray": [
+            {
+                "buttonDescription": "Leumi Card",
+                "stepId": "unableConnectingLeumiCardStoreManager"
+            }
+        ]
+    },
+
+    // --3.1.1 --
+    "unableConnectingLeumiCardStoreManager":{
+        "stepId": "unableConnectingLeumiCardStoreManager",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "Unable to connect Leumi Card in the Store Manager",
+        "buttonsArray": [  ],
+        "csInternalURL": "https://csinternal.wixanswers.com/en/article/leumi-card-unable-to-connect-leumi-card-in-the-store-manager",
+        "instructions": "Ask the user to provide a screenshot of confirmation email from Leumi Card."
     }
+
+
 
 }

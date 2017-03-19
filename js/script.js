@@ -41,16 +41,11 @@ function buildForm(stepID) {
 
     htmlForm += '</div>';
 
-    $('#content').off('click', handleClick);
+    $('#content').off('click', handleClick).html(htmlForm).on('click', handleClick);
 
-    document.getElementById('content').innerHTML = htmlForm;
 
-    $('#content').on("click", handleClick);
-
-    if (backBtn !== undefined) {
-        $('#back').off('click', handleClick);
-        document.getElementById("back").innerHTML = backBtn;
-        $('#back').on("click", handleClick);
+    if (backBtn) {
+        $('#back').off('click', handleClick).html(backBtn).on('click', handleClick);
     }
 }
 
@@ -126,7 +121,6 @@ function csInternalURL() {
     var csInternalURL = stepIDPointer.csInternalURL;
 
     return '<p> Click <a href="' + csInternalURL + '"><b>here</b></a> for further information.</p>';
-
 }
 
 
