@@ -77,7 +77,6 @@ let data = {
         "buttonsArray": [  ],
         "instructions": "Ask the user to contact the online payment provider.",
         "Note": "For an order to appear on the store manager, the payment has to be completed. This means that the status of the order has to be approved."
-
     },
 
     // -- 1.1.1.1 --
@@ -142,7 +141,6 @@ let data = {
         "buttonsArray": [  ],
         "faqTitle": "Orders Which Do Not Appear in the Store Manager (other than PayPal)" ,
         "faqURL": "https://support.wix.com/en/article/internal-wix-stores-orders-which-do-not-appear-in-the-store-manager-other-than-paypal"
-
     },
 
     // -- 1.1.1.2.4 --
@@ -254,7 +252,4 @@ let data = {
         "csInternalURL": "https://csinternal.wixanswers.com/en/article/leumi-card-unable-to-connect-leumi-card-in-the-store-manager",
         "instructions": "Ask the user to provide a screenshot of confirmation email from Leumi Card."
     }
-
-
-
 }

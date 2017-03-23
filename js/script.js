@@ -1,5 +1,5 @@
 //GLOBAL VAR
-var stepIDPointer = data.troubleshootingCategory;
+let stepIDPointer = data.troubleshootingCategory;
 
 function main() {
     addParentFormAttribute(stepIDPointer, null);
@@ -7,11 +7,10 @@ function main() {
 }
 
 function buildForm(stepID) {
+    let htmlForm;
+    let backBtn;
 
-    var htmlForm;
-    var backBtn;
-
-    htmlForm = '<div class=form id=' + stepID.stepId + '>';
+    htmlForm = `<div class=form id= ${stepID.stepId} >`;
     htmlForm += buildFormTitle(stepID.stepTitle);
 
     if (stepID.buttonsArray.length != 0) {
@@ -41,24 +40,19 @@ function buildForm(stepID) {
 
     htmlForm += '</div>';
 
-    $('#content').off('click', handleClick).html(htmlForm).on('click', handleClick);
-
+    $('#content').html(htmlForm).on('click', handleClick);
 
     if (backBtn) {
-        $('#back').off('click', handleClick).html(backBtn).on('click', handleClick);
+        $('#back').html(backBtn).on('click', handleClick);
     }
 }
 
 function buildFormTitle(stepTitle) {
-
-    var htmlStr = '<h4>' + stepTitle + '</h4>';
-    // `<h4>${stepTitle}</h4>`
-    return htmlStr;
+    return `<h4>${stepTitle}</h4>`
 }
 
 function buildFormButtons(stepId) {
-
-    var htmlStr = '<div>';
+    let htmlStr = '<div>';
 
     stepId.buttonsArray.forEach(function (button) {
         htmlStr += buildButton(button, "btn btn-default btn-lg");
@@ -70,25 +64,21 @@ function buildFormButtons(stepId) {
 }
 
 function buildButton(button, classOption) {
-
-    var htmlStr = '<button type="button" class="' + classOption + '" id=' + button.stepId + '>' + button.buttonDescription + '</button> </br>';
-
-    return htmlStr;
+    return `<button type="button" class="${classOption}" id=${button.stepId}> ${button.buttonDescription}</button> </br>`;
 }
 
 function updateNextStep(currentStep) {
-
     stepIDPointer = data[currentStep];
 }
 
-function handleClick() {
-
+function handleClick(e) {
+    e.preventDefault();
     updateNextStep(event.target.id);
     buildForm(stepIDPointer);
+    return false;
 }
 
 function addParentFormAttribute(currentNode, parentNumber) {
-
     currentNode["parent"] = parentNumber;
 
     if (currentNode.buttonsArray.length != 0) {
@@ -99,28 +89,23 @@ function addParentFormAttribute(currentNode, parentNumber) {
 }
 
 function buildBackButton(currentNode) {
-
-    var htmlStr = '<button type="button" class="backBtn btn btn-default btn-lg" id=' + currentNode.parent + '> Back </button>';
-    return htmlStr;
+    return `<button type="button" class="backBtn btn btn-default btn-lg" id=${currentNode.parent}> Back </button>`;
 }
 
 function redirectToFAQURL() {
+    let faqTitle = stepIDPointer.faqTitle;
+    let faqURL = stepIDPointer.faqURL;
 
-    var faqTitle = stepIDPointer.faqTitle;
-    var faqURL = stepIDPointer.faqURL;
-
-    return '<p> Please link to ticket to the <a href="' + faqURL + '"><b>article</b></a> of <b>' + faqTitle + '</b>.</p>';
+    return `<p> Please link to ticket to the <a href=${faqURL}><b>article</b></a> of <b>${faqTitle}</b>.</p>`;
 }
 
 function addInstructions() {
-    return '<p>' + stepIDPointer.instructions + '</p>';
+    return `<h4>${stepIDPointer.instructions}</h4>`
 }
 
 function csInternalURL() {
-
-    var csInternalURL = stepIDPointer.csInternalURL;
-
-    return '<p> Click <a href="' + csInternalURL + '"><b>here</b></a> for further information.</p>';
+    let csInternalURL = stepIDPointer.csInternalURL;
+    return `<p> Click <a href= ${csInternalURL} ><b>here</b></a> for further information.</p>`;
 }
 
 
