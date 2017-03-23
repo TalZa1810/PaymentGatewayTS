@@ -17,7 +17,6 @@ function buildForm(stepID) {
         htmlForm += buildFormButtons(stepID);
     }
     else {
-
         if (stepID.instructions) {
             htmlForm += addInstructions();
         }
@@ -38,9 +37,10 @@ function buildForm(stepID) {
         $('.backBtn ').remove();
     }
 
-    htmlForm += '</div>';
+    htmlForm += `</div>`;
 
-    $('#content').html(htmlForm).on('click', handleClick);
+    $('#content').html(htmlForm);
+    $('.regular-btn').on('click', handleClick);
 
     if (backBtn) {
         $('#back').html(backBtn).on('click', handleClick);
@@ -52,13 +52,13 @@ function buildFormTitle(stepTitle) {
 }
 
 function buildFormButtons(stepId) {
-    let htmlStr = '<div>';
+    let htmlStr = `<div>`;
 
     stepId.buttonsArray.forEach(function (button) {
-        htmlStr += buildButton(button, "btn btn-default btn-lg");
+        htmlStr += buildButton(button, "regular-btn btn btn-default btn-lg");
     });
 
-    htmlStr += '</div>';
+    htmlStr += `</div>`;
 
     return htmlStr;
 }
@@ -100,7 +100,7 @@ function redirectToFAQURL() {
 }
 
 function addInstructions() {
-    return `<h4>${stepIDPointer.instructions}</h4>`
+    return `<h5>${stepIDPointer.instructions}</h5>`
 }
 
 function csInternalURL() {
