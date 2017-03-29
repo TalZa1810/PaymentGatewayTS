@@ -108,7 +108,7 @@ function addInstructions() {
 
 function csInternalURL() {
     let csInternalURL = stepIDPointer.csInternalURL;
-    return `<p> Click <a href= ${csInternalURL} ><b>here</b></a> for further information.</p>`;
+    return `<p> Click <a href= ${csInternalURL}  target="_blank" ><b>here</b></a> for further information.</p>`;
 }
 
 
