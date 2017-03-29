@@ -226,6 +226,10 @@ let data = {
             {
                 "buttonDescription": "Unable to connect the online payment method on the store manager",
                 "stepId": "unableConnectingPaymentStoreManager"
+            },
+            {
+                "buttonDescription": "Confirmation Email is not sent to the seller",
+                "stepId": "confirmationEmailSeller"
             }
         ]
     },
@@ -240,6 +244,7 @@ let data = {
                 "buttonDescription": "Leumi Card",
                 "stepId": "unableConnectingLeumiCardStoreManager"
             }
+
         ]
     },
 
@@ -251,5 +256,19 @@ let data = {
         "buttonsArray": [  ],
         "csInternalURL": "https://csinternal.wixanswers.com/en/article/leumi-card-unable-to-connect-leumi-card-in-the-store-manager",
         "instructions": "Ask the user to provide a screenshot of confirmation email from Leumi Card."
+    },
+
+    // --3.2 --
+    "confirmationEmailSeller":{
+        "stepId": "confirmationEmailSeller",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "Confirmation Email is not sent to the seller",
+        "buttonsArray": [  ],
+        "faqTitle": "Wix Stores - Confirmation Email Not Received",
+        "faqURL": "https://support.wix.com/en/article/internal-wix-stores-confirmation-email-not-received"
     }
+
+    /*// -- 3.3 --
+     "executeBulkErrorMessage":*/
+
 }
