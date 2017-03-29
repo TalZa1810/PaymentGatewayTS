@@ -21,7 +21,6 @@ let data = {
         ]
     },
 
-
     // -- 1 --
     "ordersIssues": {
         "stepId": "ordersIssues",
@@ -230,6 +229,10 @@ let data = {
             {
                 "buttonDescription": "Confirmation Email is not sent to the seller",
                 "stepId": "confirmationEmailSeller"
+            },
+            {
+                "buttonDescription": "Receiving an ExecuteBulk error after performing an action in the Store Manager",
+                "stepId": "executeBulkErrorMessage"
             }
         ]
     },
@@ -266,9 +269,33 @@ let data = {
         "buttonsArray": [  ],
         "faqTitle": "Wix Stores - Confirmation Email Not Received",
         "faqURL": "https://support.wix.com/en/article/internal-wix-stores-confirmation-email-not-received"
-    }
+    },
 
-    /*// -- 3.3 --
-     "executeBulkErrorMessage":*/
+    // -- 3.3 --
+     "executeBulkErrorMessage":{
+         "stepId": "executeBulkErrorMessage",
+         "formTitle": "Troubleshooting store manager issues",
+         "stepTitle": "Did the user provided a detailed description of the steps he went through and a video of the issue?",
+         "buttonsArray": [
+             /*{
+                 "buttonDescription": "Yes",
+                 "stepId": ""
+             } ,*/
+             {
+                 "buttonDescription": "No",
+                 "stepId": "executeBulkNoVideo"
+             }
+         ]
+    },
+
+    // -- 3.3.1 --
+    "executeBulkNoVideo":{
+        "stepId": "executeBulkNoVideo",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "Executebulk Error message",
+        "buttonsArray": [  ],
+        "faqTitle": "User Receives an Executebulk Error When Trying to Add a Product",
+        "faqURL": "https://support.wix.com/en/article/internal-wix-stores-user-receives-an-executebulk-error-when-trying-to-add-a-product"
+    }
 
 }
