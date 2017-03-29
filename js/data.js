@@ -277,10 +277,10 @@ let data = {
          "formTitle": "Troubleshooting store manager issues",
          "stepTitle": "Did the user provided a detailed description of the steps he went through and a video of the issue?",
          "buttonsArray": [
-             /*{
+             {
                  "buttonDescription": "Yes",
-                 "stepId": ""
-             } ,*/
+                 "stepId": "executeBulkWithVideo"
+             } ,
              {
                  "buttonDescription": "No",
                  "stepId": "executeBulkNoVideo"
@@ -292,10 +292,44 @@ let data = {
     "executeBulkNoVideo":{
         "stepId": "executeBulkNoVideo",
         "formTitle": "Troubleshooting store manager issues",
-        "stepTitle": "Executebulk Error message",
+        "stepTitle": "ExecuteBulk Error message",
         "buttonsArray": [  ],
-        "faqTitle": "User Receives an Executebulk Error When Trying to Add a Product",
+        "faqTitle": "User Receives an ExecuteBulk Error When Trying to Add a Product",
         "faqURL": "https://support.wix.com/en/article/internal-wix-stores-user-receives-an-executebulk-error-when-trying-to-add-a-product"
-    }
+    },
 
+    // -- 3.3.2 --
+    "executeBulkWithVideo":{
+        "stepId": "executeBulkWithVideo",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "Were you able to recreate from scratch?",
+        "buttonsArray": [
+            {
+                "buttonDescription": "Yes",
+                "stepId": "executeBulkRecreate"
+            },
+            {
+                "buttonDescription": "No",
+                "stepId": "executeBulkNoRecreate"
+            }
+        ]
+    },
+
+    // -- 3.3.2.1 --
+    "executeBulkRecreate":{
+        "stepId": "executeBulkRecreate",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "ExecuteBulk Error message",
+        "buttonsArray": [  ],
+        "instructions": "Please escalate to the Wix Stores gang."
+    },
+
+    // -- 3.3.2.2 --
+    "executeBulkNoRecreate":{
+        "stepId": "executeBulkNoRecreate",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "ExecuteBulk Error message",
+        "buttonsArray": [  ],
+        "instructions": "It seems like a local issue. Provide the user with the regular Troubleshooter."
+    }
 }
