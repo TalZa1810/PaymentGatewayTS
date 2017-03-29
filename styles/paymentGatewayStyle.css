@@ -14,3 +14,9 @@ body {
 button {
 	margin: 25px 0;
 }
+
+h1{
+	font-family: 'Shadows Into Light';
+	font-weight: bold;
+	font-size: 50px;
+}

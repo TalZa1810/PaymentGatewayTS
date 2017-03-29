@@ -39,11 +39,16 @@ function buildForm(stepID) {
 
     htmlForm += `</div>`;
 
+
+
+
     $('#content').html(htmlForm);
-    $('.regular-btn').on('click', handleClick);
+
+    $('.regular-btn').off('click', handleClick).on('click', handleClick);
+
 
     if (backBtn) {
-        $('#back').html(backBtn).on('click', handleClick);
+        $('#back').off('click', handleClick).html(backBtn).on('click', handleClick);
     }
 }
 
