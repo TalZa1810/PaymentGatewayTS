@@ -1,6 +1,7 @@
 body {
 	display: flex;
 	justify-content: center;
+	background-color: rgb(230, 255, 255);
 }
 
 .body-wrapper {
@@ -8,7 +9,6 @@ body {
 	padding: 20px;
 	max-width: 800px;
 	min-height: 600px;
-	background-color: lightcyan;
 }
 
 button {
@@ -18,5 +18,15 @@ button {
 h1{
 	font-family: 'Shadows Into Light';
 	font-weight: bold;
-	font-size: 50px;
+	font-size: 55px;
+	margin: 55px 0;
+}
+
+h4{
+	font-size: 22px;
+	margin: 25px 0;
+}
+
+h5{
+	font-size: 18px;
 }

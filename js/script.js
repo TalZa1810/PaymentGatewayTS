@@ -40,8 +40,6 @@ function buildForm(stepID) {
     htmlForm += `</div>`;
 
 
-
-
     $('#content').html(htmlForm);
 
     $('.regular-btn').off('click', handleClick).on('click', handleClick);
@@ -101,7 +99,7 @@ function redirectToFAQURL() {
     let faqTitle = stepIDPointer.faqTitle;
     let faqURL = stepIDPointer.faqURL;
 
-    return `<p> Please link to ticket to the <a href=${faqURL}><b>article</b></a> of <b>${faqTitle}</b>.</p>`;
+    return `<p>Please paste the content of the <b>${faqTitle}</b> <a href=${faqURL} target="_blank" > <b> article </b> </a> </p>`;
 }
 
 function addInstructions() {
