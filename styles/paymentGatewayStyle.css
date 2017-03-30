@@ -55,3 +55,9 @@ p, h5, .content{
 .exampleSS{
     background-color: rgb(230, 255, 255);
 }
+
+#feedback{
+    font-size: 12px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
