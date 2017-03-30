@@ -56,7 +56,7 @@ function buildFormTitle(stepTitle) {
 }
 
 function buildFormButtons(stepId) {
-    let htmlStr = `<div class="form-buttons">`;
+    let htmlStr = `<div class="form-content">`;
 
     stepId.buttonsArray.forEach(function (button) {
         htmlStr += buildButton(button, "regular-btn btn btn-default btn-lg");
@@ -100,16 +100,16 @@ function redirectToFAQURL() {
     let faqTitle = stepIDPointer.faqTitle;
     let faqURL = stepIDPointer.faqURL;
 
-    return `<p>Please paste the content of the <b>${faqTitle}</b> <a href=${faqURL} target="_blank" > <b> article </b> </a> </p>`;
+    return `<div class="form-content"><p class="content">Please paste the content of the <b>${faqTitle}</b> <a href=${faqURL} target="_blank" > <b> article </b> </a> </p></div>`;
 }
 
 function addInstructions() {
-    return `<h5>${stepIDPointer.instructions}</h5>`
+    return `<div class="form-content"><h5 class="content">${stepIDPointer.instructions}</h5></div>`
 }
 
 function csInternalURL() {
     let csInternalURL = stepIDPointer.csInternalURL;
-    return `<p> Click <a href= ${csInternalURL}  target="_blank" ><b>here</b></a> for further information.</p>`;
+    return `<div class="form-content"><p class="content"> Click <a href= ${csInternalURL}  target="_blank" ><b>here</b></a> for further information.</p></div>`;
 }
 
 
