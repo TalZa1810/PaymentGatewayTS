@@ -33,6 +33,7 @@ h1{
 p, h5, .content{
 	font-size: 18px;
     padding: 15px;
+    margin: 0px 0px 0px;
 }
 
 .startBtn{
@@ -47,7 +48,10 @@ p, h5, .content{
 .form-content{
 	background-color: rgb(230, 255, 255);
 	padding: 10px;
-	border-bottom: 20px;
 	max-width: 800px;
 	min-height: 250px;
+}
+
+.exampleSS{
+    background-color: rgb(230, 255, 255);
 }

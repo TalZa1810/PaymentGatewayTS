@@ -2,8 +2,6 @@
 let stepIDPointer = data.troubleshootingCategory;
 
 function main() {
-
-    //<a class="btn btn-primary btn-lg startBtn" href="https://wixstores.000webhostapp.com" role="button">Start</a>
     addParentFormAttribute(stepIDPointer, null);
     buildForm(stepIDPointer);
 }
@@ -11,10 +9,6 @@ function main() {
 function buildForm(stepID) {
     let htmlForm;
     let backBtn;
-
-
-
-    //$('.title-wrapper')
 
     htmlForm = `<div class="form panel panel-default" id= ${stepID.stepId} >`;
 
@@ -35,6 +29,10 @@ function buildForm(stepID) {
         if (stepID.faqURL) {
             htmlForm += redirectToFAQURL();
         }
+
+        if (stepID.note){
+            htmlForm+= note();
+        }
     }
 
     if (stepIDPointer.stepId != data.troubleshootingCategory.stepId) {
@@ -46,26 +44,32 @@ function buildForm(stepID) {
 
     htmlForm += `</div>`;
 
-
     $('#content').html(htmlForm);
-
     $('.regular-btn').off('click', handleClick).on('click', handleClick);
 
-
     if (backBtn) {
-        $('#back').off('click', handleClick).html(backBtn).on('click', handleClick);
+        $('#back').html(backBtn);
+        $('.backBtn').off('click', handleClick).on('click', handleClick);
     }
 }
 
 function buildFormTitle(stepTitle) {
-    return `<div class="panel-heading"> <h4 class="panel-title form-title">${stepTitle}</h4></div>`
+    return  `<div class="panel-heading"> <h4 class="panel-title form-title">${stepTitle}</h4></div>`;
 }
 
 function buildFormButtons(stepId) {
-    let htmlStr = `<div class="form-content">`;
+    let screenshot = stepIDPointer.exampleScreenshot;
+
+    let htmlStr = "";
+
+    if(screenshot){
+        htmlStr +=  `<div class="exampleSS"><p><a href= ${screenshot} target="_blank" ><b>Screenshot to clarify</b></a></p></div>`;
+    }
+
+    htmlStr += `<div class="form-content">`;
 
     stepId.buttonsArray.forEach(function (button) {
-        htmlStr += buildButton(button, "regular-btn btn btn-default btn-lg");
+        htmlStr += buildButton(button);
     });
 
     htmlStr += `</div>`;
@@ -73,8 +77,8 @@ function buildFormButtons(stepId) {
     return htmlStr;
 }
 
-function buildButton(button, classOption) {
-    return `<button type="button" class="${classOption}" id=${button.stepId}> ${button.buttonDescription}</button> </br>`;
+function buildButton(button) {
+    return `<button type="button" class="regular-btn btn btn-default btn-lg" id=${button.stepId}> ${button.buttonDescription}</button> </br>`;
 }
 
 function updateNextStep(currentStep) {
@@ -115,6 +119,10 @@ function addInstructions() {
 
 function csInternalURL() {
     let csInternalURL = stepIDPointer.csInternalURL;
-    return `<div class="form-content"><p class="content"> Click <a href= ${csInternalURL}  target="_blank" ><b>here</b></a> for further information.</p></div>`;
+    return `<div class="form-content"><p class="content"> Click <a href= ${csInternalURL} target="_blank" ><b>here</b></a> for further information.</p></div>`;
 }
 
+function note() {
+    let note = stepIDPointer.note;
+    return `<div class="alert alert-info note" role="alert"><p> <b>Note:<u></u></b> ${note} </p></div>`
+}

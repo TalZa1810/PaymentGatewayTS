@@ -7,14 +7,17 @@ let data = {
         "stepTitle": "Please select the relevant category:",
         "buttonsArray": [
             {
+                // -- 1 --
                 "buttonDescription": "Troubleshooting orders issues",
                 "stepId": "ordersIssues"
             },
             {
+                // -- 2 --
                 "buttonDescription": "Troubleshooting shipping issues",
                 "stepId": "shippingIssues"
             },
             {
+                // -- 3 --
                 "buttonDescription": "Troubleshooting store manager issues",
                 "stepId": "storeManagerIssues"
             }
@@ -28,6 +31,7 @@ let data = {
         "stepTitle": "Please select the relevant category:",
         "buttonsArray": [
             {
+                // -- 1.1 --
                 "buttonDescription": "Orders are missing in the store manager",
                 "stepId": "missingOrders"
             }
@@ -41,10 +45,12 @@ let data = {
         "stepTitle": "Did the user receive an Email notification from the online payment provider?",
         "buttonsArray": [
             {
+                // -- 1.1.1 --
                 "buttonDescription": "Yes",
                 "stepId": "userAcceptedEmailNotification"
             },
             {
+                // -- 1.1.2 --
                 "buttonDescription": "No",
                 "stepId": "userDidntAcceptedEmailNotification"
             }
@@ -58,10 +64,12 @@ let data = {
         "stepTitle": "Does the order exist in the Orders tab of the Store manager?",
         "buttonsArray": [
             {
+                // -- 1.1.1.1 --
                 "buttonDescription": "Yes",
                 "stepId": "orderExistStoreManager"
             },
             {
+                // -- 1.1.1.2 --
                 "buttonDescription": "No",
                 "stepId": "orderDoesntExistStoreManager"
             }
@@ -75,7 +83,7 @@ let data = {
         "stepTitle": "Order not appearing in the store manager",
         "buttonsArray": [  ],
         "instructions": "Ask the user to contact the online payment provider.",
-        "Note": "For an order to appear on the store manager, the payment has to be completed. This means that the status of the order has to be approved."
+        "note": "For an order to appear on the store manager, the payment has to be completed. This means that the status of the order has to be approved."
     },
 
     // -- 1.1.1.1 --
@@ -94,18 +102,22 @@ let data = {
         "stepTitle": "Please select the relevant payment gateway:",
         "buttonsArray": [
             {
+                // -- 1.1.1.2.1 --
                 "buttonDescription": "PayPal",
                 "stepId": "missingOrdersPayPal"
             },
             {
+                // -- 1.1.1.2.2 --
                 "buttonDescription": "Stripe",
                 "stepId": "missingOrdersStripe"
             },
             {
+                // -- 1.1.1.2.3 --
                 "buttonDescription": "Square",
                 "stepId": "missingOrdersSquare"
             },
             {
+                // -- 1.1.1.2.4 --
                 "buttonDescription": "Leumi Card",
                 "stepId": "missingOrdersLeumiCard"
             }
@@ -159,10 +171,12 @@ let data = {
         "stepTitle": "Has the user created shipping rules by a weight range?",
         "buttonsArray": [
             {
+                // -- 2.1 --
                 "buttonDescription": "Yes",
                 "stepId": "userCreatedShippingRulesByWeight"
             },
             {
+                // -- 2.2 --
                 "buttonDescription": "No",
                 "stepId": "userNotCreatedShippingRulesByWeight"
             }
@@ -186,10 +200,12 @@ let data = {
         "stepTitle": "Does the user get additional shipping charges when proceeding to the PayPal checkout form Wix?",
         "buttonsArray": [
             {
+                // -- 2.2.1 --
                 "buttonDescription": "Yes",
                 "stepId": "additionalChargesPayPalProceeding"
             } ,
             {
+                // -- 2.2.2 --
                 "buttonDescription": "No",
                 "stepId": "shippingCalculatedIncorrectly"
             }
@@ -223,16 +239,24 @@ let data = {
         "stepTitle": "Please select the relevant category:",
         "buttonsArray": [
             {
+                // -- 3.1 --
                 "buttonDescription": "Unable to connect the online payment method on the store manager",
                 "stepId": "unableConnectingPaymentStoreManager"
             },
             {
+                // --3.2 --
                 "buttonDescription": "Confirmation Email is not sent to the seller",
                 "stepId": "confirmationEmailSeller"
             },
             {
+                // -- 3.3 --
                 "buttonDescription": "Receiving an ExecuteBulk error after performing an action in the Store Manager",
                 "stepId": "executeBulkErrorMessage"
+            },
+            {
+                // -- 3.4 --
+                "buttonDescription":"Confirmation Email is not being sent to buyers",
+                "stepId": "confirmationEmailBuyers"
             }
         ]
     },
@@ -244,6 +268,7 @@ let data = {
         "stepTitle": "Please select the relevant payment gateway:",
         "buttonsArray": [
             {
+                // --3.1.1 --
                 "buttonDescription": "Leumi Card",
                 "stepId": "unableConnectingLeumiCardStoreManager"
             }
@@ -278,10 +303,12 @@ let data = {
          "stepTitle": "Did the user provided a detailed description of the steps he went through and a video of the issue?",
          "buttonsArray": [
              {
+                 // -- 3.3.1 --
                  "buttonDescription": "Yes",
                  "stepId": "executeBulkWithVideo"
              } ,
              {
+                 // -- 3.3.2 --
                  "buttonDescription": "No",
                  "stepId": "executeBulkNoVideo"
              }
@@ -289,6 +316,25 @@ let data = {
     },
 
     // -- 3.3.1 --
+    "executeBulkWithVideo":{
+        "stepId": "executeBulkWithVideo",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "Were you able to recreate from scratch?",
+        "buttonsArray": [
+            {
+                // -- 3.3.1.1 --
+                "buttonDescription": "Yes",
+                "stepId": "executeBulkRecreate"
+            },
+            {
+                // -- 3.3.1.2 --
+                "buttonDescription": "No",
+                "stepId": "executeBulkNoRecreate"
+            }
+        ]
+    },
+
+    // -- 3.3.2 --
     "executeBulkNoVideo":{
         "stepId": "executeBulkNoVideo",
         "formTitle": "Troubleshooting store manager issues",
@@ -298,24 +344,7 @@ let data = {
         "faqURL": "https://support.wix.com/en/article/internal-wix-stores-user-receives-an-executebulk-error-when-trying-to-add-a-product"
     },
 
-    // -- 3.3.2 --
-    "executeBulkWithVideo":{
-        "stepId": "executeBulkWithVideo",
-        "formTitle": "Troubleshooting store manager issues",
-        "stepTitle": "Were you able to recreate from scratch?",
-        "buttonsArray": [
-            {
-                "buttonDescription": "Yes",
-                "stepId": "executeBulkRecreate"
-            },
-            {
-                "buttonDescription": "No",
-                "stepId": "executeBulkNoRecreate"
-            }
-        ]
-    },
-
-    // -- 3.3.2.1 --
+    // -- 3.3.1.1 --
     "executeBulkRecreate":{
         "stepId": "executeBulkRecreate",
         "formTitle": "Troubleshooting store manager issues",
@@ -324,12 +353,67 @@ let data = {
         "instructions": "Please escalate to the Wix Stores gang."
     },
 
-    // -- 3.3.2.2 --
+    // -- 3.3.1.2 --
     "executeBulkNoRecreate":{
         "stepId": "executeBulkNoRecreate",
         "formTitle": "Troubleshooting store manager issues",
         "stepTitle": "ExecuteBulk Error message",
         "buttonsArray": [  ],
         "instructions": "It seems like a local issue. Provide the user with the regular Troubleshooter."
+    },
+
+    // -- 3.4 --
+    "confirmationEmailBuyers":{
+        "stepId": "confirmationEmailBuyers",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "Is the 'Send an order confirmation email to buyers after purchase' checkbox is enabled? ",
+        "exampleScreenshot": "https://dl2.pushbulletusercontent.com/zxnqzbMfxSoLkPbnACiCg062vesKtYQS/cccc.png",
+        "buttonsArray": [
+            {
+                // -- 3.4.1 --
+                "buttonDescription": "Yes",
+                "stepId": "confirmationEmailCheckboxEnabled"
+            },
+            {
+                // -- 3.4.2 --
+                "buttonDescription": "No",
+                "stepId": "confirmationEmailCheckboxDisabled"
+            },
+            {
+                // -- 3.4.3 --
+                "buttonDescription": "The user does not have this feature",
+                "stepId": "noConfirmationEmailCheckbox"
+            }
+        ]
+    },
+
+    // -- 3.4.1 --
+    "confirmationEmailCheckboxEnabled":{
+        "stepId": "confirmationEmailCheckboxEnabled",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "Confirmation Email Checkbox was Enabled",
+        "buttonsArray": [  ],
+        "faqTitle": "Confirmation Email Not Sent To Customers",
+        "faqURL": "https://support.wix.com/en/article/internal-wix-stores-confirmation-email-not-sent-to-customers"
+    },
+
+    // -- 3.4.2 --
+    "confirmationEmailCheckboxDisabled":{
+        "stepId": "confirmationEmailCheckboxDisabled",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "Confirmation Email Checkbox was Disabled",
+        "buttonsArray": [  ],
+        "faqTitle": "ending Confirmation Emails to Your Customers Following a Store Purchase",
+        "faqURL": "https://support.wix.com/en/article/sending-confirmation-emails-to-your-customers-following-a-store-purchase"
+    },
+
+    // -- 3.4.3 --
+    "noConfirmationEmailCheckbox":{
+        "stepId": "noConfirmationEmailCheckbox",
+        "formTitle": "Troubleshooting store manager issues",
+        "stepTitle": "Using Smart Action",
+        "buttonsArray": [  ],
+        "faqTitle": "Sending Automated Confirmation Emails to Your Store Customers",
+        "faqURL": "https://support.wix.com/en/article/sending-automated-confirmation-emails-to-your-store-customers-using-smart-actions"
     }
 }
