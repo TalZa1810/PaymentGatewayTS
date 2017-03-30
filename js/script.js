@@ -118,13 +118,3 @@ function csInternalURL() {
     return `<div class="form-content"><p class="content"> Click <a href= ${csInternalURL}  target="_blank" ><b>here</b></a> for further information.</p></div>`;
 }
 
-
-/*
-function dropDownFunc() {
-
-    $('.dropdown-toggle').
-    
-}*/
-
-
-
