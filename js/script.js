@@ -114,12 +114,12 @@ function redirectToFAQURL() {
 }
 
 function addInstructions() {
-    return `<div class="form-content"><h5 class="content">${stepIDPointer.instructions}</h5></div>`
+    return `<div class="form-text"><h5 class="content">${stepIDPointer.instructions}</h5></div>`
 }
 
 function csInternalURL() {
     let csInternalURL = stepIDPointer.csInternalURL;
-    return `<div class="form-content"><p class="content"> Click <a href= ${csInternalURL} target="_blank" ><b>here</b></a> for further information.</p></div>`;
+    return `<div class="form-text"><p> Click <a href= ${csInternalURL} target="_blank" ><b>here</b></a> for further information.</p></div>`;
 }
 
 function note() {

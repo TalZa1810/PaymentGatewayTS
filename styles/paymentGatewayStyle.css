@@ -52,7 +52,7 @@ p, h5, .content{
 	min-height: 250px;
 }
 
-.exampleSS{
+.exampleSS,.form-text{
     background-color: rgb(230, 255, 255);
 }
 
