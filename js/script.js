@@ -10,7 +10,8 @@ function buildForm(stepID) {
     let htmlForm;
     let backBtn;
 
-    htmlForm = `<div class=form id= ${stepID.stepId} >`;
+    htmlForm = `<div class="form panel panel-default" id= ${stepID.stepId} >`;
+
     htmlForm += buildFormTitle(stepID.stepTitle);
 
     if (stepID.buttonsArray.length != 0) {
@@ -51,11 +52,11 @@ function buildForm(stepID) {
 }
 
 function buildFormTitle(stepTitle) {
-    return `<h4>${stepTitle}</h4>`
+    return `<div class="panel-heading"> <h4 class="panel-title form-title">${stepTitle}</h4></div>`
 }
 
 function buildFormButtons(stepId) {
-    let htmlStr = `<div>`;
+    let htmlStr = `<div class="form-buttons">`;
 
     stepId.buttonsArray.forEach(function (button) {
         htmlStr += buildButton(button, "regular-btn btn btn-default btn-lg");
@@ -92,7 +93,7 @@ function addParentFormAttribute(currentNode, parentNumber) {
 }
 
 function buildBackButton(currentNode) {
-    return `<button type="button" class="backBtn btn btn-default btn-lg" id=${currentNode.parent}> Back </button>`;
+    return `<button type="button" class="backBtn btn btn-info btn-lg" id=${currentNode.parent}> Back </button>`;
 }
 
 function redirectToFAQURL() {

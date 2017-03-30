@@ -1,7 +1,5 @@
 body {
 	display: block;
-	background-color: rgb(230, 255, 255);
-
 }
 
 .body-wrapper  {
@@ -27,9 +25,9 @@ h1{
 	margin-bottom: 0px;
 }
 
-h4{
+.form-title{
 	font-size: 22px;
-	margin: 25px 0;
+	margin: 10px 0;
 }
 
 h5{
@@ -38,4 +36,22 @@ h5{
 
 p{
 	font-size: 18px;
+}
+
+.startBtn{
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.backBtn{
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+.form-buttons{
+	background-color: rgb(230, 255, 255);
+	padding: 10px;
+	border-bottom: 20px;
+	max-width: 800px;
+	min-height: 250px;
 }
