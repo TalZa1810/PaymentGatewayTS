@@ -2,6 +2,8 @@
 let stepIDPointer = data.troubleshootingCategory;
 
 function main() {
+
+    //<a class="btn btn-primary btn-lg startBtn" href="https://wixstores.000webhostapp.com" role="button">Start</a>
     addParentFormAttribute(stepIDPointer, null);
     buildForm(stepIDPointer);
 }
@@ -9,6 +11,10 @@ function main() {
 function buildForm(stepID) {
     let htmlForm;
     let backBtn;
+
+
+
+    //$('.title-wrapper')
 
     htmlForm = `<div class="form panel panel-default" id= ${stepID.stepId} >`;
 
@@ -111,5 +117,7 @@ function csInternalURL() {
     let csInternalURL = stepIDPointer.csInternalURL;
     return `<div class="form-content"><p class="content"> Click <a href= ${csInternalURL}  target="_blank" ><b>here</b></a> for further information.</p></div>`;
 }
+
+
 
 
