@@ -6,7 +6,7 @@ body {
 	margin: 0px auto ;
 	padding: 20px;
 	max-width: 800px;
-	min-height: 600px;
+	min-height: 508px;
 }
 
 .title-wrapper{
@@ -60,4 +60,8 @@ p, h5, .content{
     font-size: 12px;
     margin-left: 20px;
     margin-top: 10px;
+}
+
+#navigation-bar{
+	background-color: #e3f2fd;
 }
