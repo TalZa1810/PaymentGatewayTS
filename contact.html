@@ -17,7 +17,6 @@
 
 <body id="main-contact-form-div" >
 
-
 <nav id="navigation-bar" class="navbar navbar-default" >
     <div class="container-fluid">
         <div class="navbar-header">
@@ -62,17 +61,39 @@
 
 <div class="body-wrapper">
     <div id="contact-form">
-
-        <form action="" method="POST" enctype="multipart/form-data">
-            <input name="action" value="submit" type="hidden"> Your name:<br>
-            <input name="name" size="30" type="text"><br> Your email:<br>
-            <input name="email" size="30" type="text"><br> Your message:<br>
-            <textarea name="message" rows="7" cols="30">
-        </textarea><br>
-            <input value="Send email" type="submit">
-        </form>
+      <?php
+        $action=$_REQUEST['action'];
+            if ($action=="")    /* display the contact form */
+            {
+            ?>
+                <form  action="" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="action" value="submit">
+                    Your name:<br>
+                    <input name="name" type="text" value="" size="30"/><br>
+                    Your email:<br>
+                    <input name="email" type="text" value="" size="30"/><br>
+                    Your message:<br>
+                    <textarea name="message" rows="7" cols="30"></textarea><br>
+                    <input type="submit" value="Send email"/>
+                </form>
+                <?php
+            }
+            else {
+                $name=$_REQUEST['name'];
+                $email=$_REQUEST['email'];
+                $message=$_REQUEST['message'];
+                if (($name=="")||($email=="")||($message==""))  {
+                    echo "All fields are required, please fill <a href=\"\"> the form</a> again.";
+                 }
+                 else{
+                    $from="From: $name<$email>\r\nReturn-path: $email";
+                    $subject="Message sent using your contact form";
+                    mail("talza@wix.com", $subject, $message, $from);
+                    echo "Email sent!";
+                 }
+             }
+       ?>
     </div>
-
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
