@@ -366,7 +366,7 @@ let data = {
     "confirmationEmailBuyers":{
         "stepId": "confirmationEmailBuyers",
         "formTitle": "Troubleshooting store manager issues",
-        "stepTitle": "Is the 'Send an order confirmation email to buyers after purchase' checkbox is enabled? ",
+        "stepTitle": "Is the 'Send an order confirmation email to buyers after purchase' checkbox enabled? ",
         "exampleScreenshot": "https://dl2.pushbulletusercontent.com/zxnqzbMfxSoLkPbnACiCg062vesKtYQS/cccc.png",
         "buttonsArray": [
             {
